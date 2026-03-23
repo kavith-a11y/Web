@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="4; url=home.html">
+    <title>Protect underwater lives</title>
+  <style>
+    video{
+      object-fit:cover;
+      position:fixed;
+      min-height:100vh;
+      max-heihgt:100vh;
+      opacity:50%;
+      z-index:-1
+    }
+    body{
+      background-color: #000000;
+      margin:0px;
+    }
+    h1{
+      margin:0px;
+      text-align:left;
+      text-align:center;
+      color:white;
+      font-size:48px;
+    }
+    h2{
+      margin:0px;
+      color:white;
+      font-size:32px;
+    }
+    table{
+      color:#FFFFFF;
+      margin-left:auto;
+      margin-right:auto;
+      text-align:left;
+      background-color:#0B132B;
+      font-size:25px;
+      border:2px solid #1C2541;
+    }
+    span{
+      background-color:rgba(255, 255, 255, 0.1);
+      color:#FF7F50;
+      font-size:45px;
+      font-weight:bold;
+      padding:5px;
+    }
+    td{
+      padding:3px;
+    }
+    div{
+      text-align:center;
+    }
+    p{
+      color:white;
+    }
+    #d1{
+      height:20px;
+      width:20px;
+      margin-left:auto;
+      background-color:white;
+      color: #00ffe1;
+      border-radius:50%;
+      animation: load 1s infinite alternate;
+      z-index:999;
+      border: 2px solid red;
+    }
+    #d2{
+      height:20px;
+      width:20px;
+      background-color:white;
+      color: #00ffe1;
+      border-radius:50%;
+      animation: load 1s infinite alternate;
+      z-index:999;
+      border: 2px solid red;
+      animation-delay:0.3s;
+    }
+    #d3{
+      height:20px;
+      width:20px;
+      margin-right:auto;
+      background-color:white;
+      color: #00ffe1;
+      border-radius:50%;
+      animation: load 1s infinite alternate;
+      z-index:999;
+      border: 2px solid red;
+      animation-delay:0.6s;
+    }
+    .loading-dots {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+
+    @keyframes load {
+      0% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(0.7);
+      }
+    }
+    button{
+      font-size:30px;
+      color: #ffffff;
+      background-color: #FF5733;
+    }
+    button:hover{
+      font-size:30px;
+      color: #FFFFFF;
+      background-color: #FF8D1A;
+    }
+    #mission{
+      text-align:left;
+      margin-left:70px;
+      font-size:43px;
+    }
+
+  </style>
+</head>
+<body>
+<link rel="stylesheet" href="splash.css">
+<video src="video.mp4" autoplay muted loop></video>
+<div>
+  <h1>Underwater Life</h1><br><br>
+  <span id="count">You will be directed to the home page in 4</span><br><br><br><br>
+  <div class="loading-dots">
+  <div id="d1"></div>
+  <div id="d2"></div>
+  <div id="d3"></div>
+  </div><br><br>
+  <a href="home.html"><button><b>Skip to homepage</b></button></a><br><br>
+  <h2 id="mission">Our Mission -</h2>
+  <h2>To inspire global awareness of marine life and protect the delicate balance of our underwater world.</h2><br><br><br>
+    <h2>Group members</h2><br>
+  <table>
+    <tr><td>Manula senanayake</td><td>Student 1</td></tr>
+    <tr><td>Kavith Gethmina</td><td>Student 2</td></tr>
+    <tr><td>Janith</td><td>Student 3</td></tr>
+    <tr><td>Hivin Jayawikrama</td><td>Student 4</td></tr>
+  </table>
+
+</div>
+<script>
+  let timeleft=4;
+  let timer=setInterval(function(){
+    document.getElementById("count").innerHTML="You will be directed to the home page in "+timeleft
+    timeleft-=1;
+  },1000)
+</script>
+</body>
+</html>

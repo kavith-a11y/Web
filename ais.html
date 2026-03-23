@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlueFuture - Life Below Water</title>
+  <!-- GLOBAL CSS - DO NOT CHANGE -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Page specific CSS will go here -->
+</head>
+<body>
+<!-- HEADER - DO NOT CHANGE STRUCTURE -->
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <img src="logo.png" alt="BlueFuture Logo - Protecting Life Below Water">
+      <div>
+        <h1>BlueFuture</h1>
+        <p>Protecting Life Below Water</p>
+      </div>
+    </div>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="splash.html">Splash</a></li>
+        <li><a href="ais.html" class="active">Impact Simulator</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="sitemap.html">Sitemap</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <style>
+    body{
+      background-image:url("bg.jpg");
+      background-size:cover;
+      background-position:center;
+      background-attachment:fixed;
+    }
+    .card{
+      text-align:center;
+      color:black;
+      height:auto;
+      width:350px;
+      margin:15px;
+      padding:15px;
+      background-color:#5DADE2;
+      color:#0D1B2A;
+      border-radius:30px;
+    }
+    .card:hover{
+      color:#F0F8FF;
+      background-color: #1e8bc3;
+    }
+    .card:active{
+      background-color:#5DADE2;
+      color:#093a4a;
+    }
+    .cards{
+      display:flex;
+      flex-wrap:wrap;
+      width:auto;
+      height:auto;
+    }
+    .img{
+      border-radius:20px;
+    }
+    .h1{
+      border:2px solid #093A4A;
+      border-radius:10px;
+      padding:10px;
+      text-align:center;
+      color:white;
+      background-color:rgba(9,58,74,0.8);
+    }
+    h2{
+      padding:5px;
+      text-decoration:underline;
+    }
+    .h3{
+      color:white;
+      background-color:rgba(9,58,74,0.8);
+      padding:15px;
+      border-radius:20px;
+      width:300px;
+      border:1px solid white;
+    }
+    .button{
+      font-size:20px;
+      background-color:#093a4a;
+      color:white;
+      height:40px;
+      width:90px;
+      border-radius:15px;
+      padding:5px;
+      border:1px solid white;
+    }
+    .button:hover{
+      background-color:#F0F8FF;
+      color:#093a4a;
+    }
+    .button:active{
+      color:#F0F8FF;
+      background-color: #1e8bc3;
+    }
+    .selected{
+      background-color: #61fff2;
+      color:#093a4a;
+    }
+  </style>
+  <h1 class="h1">Use this simulator to see how much you have contirbuted to make life below water better</h1>
+  <section class="cards">
+    <section class="card" onclick="update(3,this)">
+      <h2>Cut down on plastic</h2>
+      <p>Choose reusable items instead of single-use plastics to protect marine animals, like sea turtles, from entanglement.</p>
+      <img class="img" src="turtle.jpg" alt="Turtle near a polethene bag"><br>
+      <p>points - 3</p>
+    </section>
+    <section class="card" onclick="update(2,this)">
+      <h2>Reduce seafood intake</h2>
+      <p>Eat seafood less frequently, or choose only sustainably caught options, to help prevent the overfishing of species like tuna.</p>
+      <img class="img" src="seafood.jpg" alt="picture of fish that are used to cook"><br>
+      <p>points - 2</p>
+    </section>
+    <section class="card" onclick="update(2,this)">
+      <h2>Conserve Electricity</h2>
+      <p>Turn off lights and unplug devices to lower your energy consumption, helping to slow climate change and protect coral reefs.</p>
+      <img class="img" src="electricity.jpg" alt="turning the light off"><br>
+      <p>points - 2</p>
+    </section>
+    <section class="card" onclick="update(4,this)">
+      <h2>Sort Your Waste</h2>
+      <p>Separate your recyclables, compost, and trash before disposing of them correctly to keep harmful garbage out of the marine ecosystem.</p>
+      <img class="img" src="wastesort.jpg" alt="sorting different kinds of trash"><br>
+      <p>points - 4</p>
+    </section>
+    <section class="card" onclick="update(4,this)">
+      <h2>Leave No Trace</h2>
+      <p>Enjoy coastal environments by observing nature, and do not leave your trash on the beach</p>
+      <img class="img" src="trace.jpg" alt="image showing trash on the beach">
+      <p>points - 4</p>
+    </section>
+    <section class="card" onclick="update(5,this)">
+      <h2>Clean the Coasts</h2>
+      <p>Participate in a coastal cleaning activity to physically remove trash and spread awareness about protecting marine life.</p>
+      <img class="img" src="cleaning.jpg" alt="image showing a group cleaning the beach">
+      <p>points - 5</p>
+    </section>
+  </section>
+  <div class="h3">
+  <h3>Selected items = <span id="items">0</span></h3>
+  <h3>Total impact score = <span id="score">0</span></h3>
+  <h3>Impact level = <span id="level">Low</span></h3>
+  <h3><span id="remarks"></span></h3>
+  </div><br>
+  <button class="button" onclick="reset()">Reset</button>
+</main>
+
+<!-- FOOTER - UPDATE WITH YOUR LINKS -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>BlueFuture</h3>
+      <p>Working towards SDG 14: Life Below Water</p>
+      <p>Conserve and sustainably use the oceans, seas and marine resources</p>
+    </div>
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <!-- Update this to your own  -->
+      <p><a href="pageEditor_ST1.html">Page Editor (Student 1)</a></p>
+      <p><a href="validation_ST1.html">Validation</a></p>
+      <p>Accessibility Statement</p>
+    </div>
+    <div class="footer-section">
+      <h3>Accessibility Statement</h3>
+      <p>Use of semantic HTML structure</p><!--header, nav, main, footer-->
+      <p>All images include alternative text</p><!--alt usage-->
+      <p>Readable fonts and clear colour contrast</p>
+      <p>Simple and consistent navigation</p>
+      <p>Keyboard-friendly navigation</p>
+
+    </div>
+    <div class="footer-section">
+      <h3>Contact</h3>
+      <!-- Add your westminster mail here -->
+      <p>Email: info@bluefuture.org</p>
+      <p>© 2026 BlueFuture Team</p>
+    </div>
+    <div class="footer-section">
+      <h3>Student 01</h3> <!-- Add your role number here -->
+      <!-- Add your name here -->
+      <p>Name: </p>
+      <!-- Add your St ID here -->
+      <p>Student ID:</p>
+      <p>Role:</p><!-- Add your work here -->
+
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>This website is created for educational purposes - University of Westminster</p>
+  </div>
+</footer>
+<script>
+  let score=0;
+  let items=0;
+  function update(points,clickedCard){
+    clickedCard.onclick=null;
+    clickedCard.classList.add("selected");
+    score+=points;
+    items+=1;
+    if(score>1 && score<=8){
+      document.getElementById("level").innerHTML="Low"
+      document.body.style.backgroundImage="url(weakbg.jpg)"
+    }
+    if(score>8 && score<=15){
+      document.getElementById("level").innerHTML="Medium"
+      document.body.style.backgroundImage="url(mediumbg.jpg)"
+    }
+    else if(score>15 && score<=20){
+      document.getElementById("level").innerHTML="High"
+      document.body.style.backgroundImage="url(highbg.jpg)"
+    }
+    document.getElementById("items").innerHTML = items;
+    document.getElementById("score").innerHTML = score;
+  }
+  function reset(){
+    window.location.reload();
+  }
+</script>
+</body>
+</html>
