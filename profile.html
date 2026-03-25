@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueFuture - User Profile</title>
+
+    <!-- GLOBAL CSS - DO NOT CHANGE -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .main {
+            padding: 20px;
+        }
+
+        /* Start Button */
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background: #2c7a7b;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background: #1f5b5d;
+        }
+
+        /* ONLY RESET BUTTON RED */
+        .reset-btn {
+            background: #e74c3c;
+        }
+
+        .reset-btn:hover {
+            background: #c0392b;
+        }
+
+        .nav-menu a {
+            margin: 10px;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER - DO NOT CHANGE STRUCTURE -->
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <img src="logo.png" alt="BlueFuture Logo - Protecting Life Below Water">
+            <div>
+                <h1>BlueFuture</h1>
+                <p>Protecting Life Below Water</p>
+            </div>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="splash.html">Splash</a></li>
+                <li><a href="ais.html">Impact Simulator</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="profile.html" class="active">Profile</a></li>
+                <li><a href="sitemap.html">Sitemap</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="main">
+
+    <h2>Create Your Sustainability Profile</h2>
+
+    <button class="button" onclick="startProfile()">Start Profile</button>
+
+    <div id="profileOutput"></div>
+    <div id="progress"></div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>BlueFuture</h3>
+            <p>Working towards SDG 14: Life Below Water</p>
+            <p>Conserve and sustainably use the oceans, seas and marine resources</p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <p><a href="pageEditor_ST4.html">Page Editor (Student 4)</a></p>
+            <p><a href="validation_ST4.html">Validation</a></p>
+        </div>
+        <div class="footer-section">
+            <h3>Accessibility Statement</h3>
+            <p>Use of semantic HTML structure</p>
+            <p>All images include alternative text</p>
+            <p>Readable fonts and clear colour contrast</p>
+            <p>Simple and consistent navigation</p>
+            <p>Keyboard-friendly navigation</p>
+        </div>
+        <div class="footer-section">
+            <h3>Contact</h3>
+            <p>Email: info@bluefuture.org</p>
+            <p>© 2026 BlueFuture Team</p>
+        </div>
+        <div class="footer-section">
+            <h3>Student 04</h3>
+            <p>Name: Hivin Nisalitha</p>
+            <p>Student ID: YOUR_ID</p>
+            <p>Content Page: User Profile</p>
+            <p>Role: Developer</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>This website is created for educational purposes - University of Westminster</p>
+    </div>
+</footer>
+
+<script>
+    function startProfile() {
+
+        let completed = 0;
+
+        let name = prompt("Step 1 - Enter your name");
+        if (name) { completed++; }
+
+        let country = prompt("Step 2 - Enter your country");
+        if (country) { completed++; }
+
+        let id = prompt("Step 3 - Enter your University ID");
+        if (id) { completed++; }
+
+        let interest = prompt("Step 4 - What ocean topic interests you?");
+        if (interest) { completed++; }
+
+        let habit = prompt("Step 5 - Name one eco-friendly habit you follow");
+        if (habit) { completed++; }
+
+        let transport = prompt("Step 6 - Preferred eco transport (bike/bus/train)");
+        if (transport) { completed++; }
+
+        let goal = prompt("Step 7 - What is your sustainability goal?");
+        if (goal) { completed++; }
+
+        let percent = ((completed / 7) * 100).toFixed(2);
+
+        // Profile Details
+        if (completed > 0) {
+            document.getElementById("profileOutput").innerHTML =
+                "<h3>Your Profile</h3>" +
+                "<p><strong>Name:</strong> "      + (name      || "Not provided") + "</p>" +
+                "<p><strong>Country:</strong> "   + (country   || "Not provided") + "</p>" +
+                "<p><strong>ID:</strong> "        + (id        || "Not provided") + "</p>" +
+                "<p><strong>Interest:</strong> "  + (interest  || "Not provided") + "</p>" +
+                "<p><strong>Eco Habit:</strong> " + (habit     || "Not provided") + "</p>" +
+                "<p><strong>Transport:</strong> " + (transport || "Not provided") + "</p>" +
+                "<p><strong>Goal:</strong> "      + (goal      || "Not provided") + "</p>";
+
+            // Profile Completion + Reset Button
+            document.getElementById("progress").innerHTML =
+                "<h3>Profile Completion: " + percent + "%</h3>" +
+                "<br><button class='button reset-btn' onclick='resetProfile()'>Reset</button>";
+        }
+    }
+
+    function resetProfile() {
+        document.getElementById("profileOutput").innerHTML = "";
+        document.getElementById("progress").innerHTML = "";
+    }
+</script>
+
+</body>
+</html>

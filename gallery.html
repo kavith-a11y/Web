@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - BlueFuture: Marine Life Gallery</title>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- PAGE SPECIFIC STYLES -->
+    <style>
+        /* Gallery page specific styles */
+        
+        /* 1. Gallery grid layout */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        /* 2. Thumbnail styling */
+        .thumb {
+            background: white;
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        /* 3. Thumbnail hover effect */
+        .thumb:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(59, 123, 154, 0.3);
+            border-color: #5dade2;
+        }
+        
+        .thumb img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .thumb h4 {
+            color: #3B7B9A;
+            margin: 0.5rem 0;
+        }
+        
+        /* 4. Extended view modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        /* 5. Close button */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #093a4a;
+            transition: color 0.3s ease;
+        }
+        
+        .close-btn:hover {
+            color: #5dade2;
+        }
+        
+        /* 6. Modal image */
+        .modal-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+        
+        /* 7. Control panel */
+        .control-panel {
+            background: #f0f8ff;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            border-left: 4px solid #5dade2;
+        }
+        
+        .control-panel h3 {
+            color: #3B7B9A;
+            margin-bottom: 1rem;
+        }
+        
+        /* 8. Style buttons */
+        .style-btn {
+            background: white;
+            border: 2px solid #5dade2;
+            color: #0d1b2a;
+            padding: 0.5rem 1rem;
+            margin: 0.25rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .style-btn:hover {
+            background: #5dade2;
+            color: white;
+        }
+        
+        .style-btn.active {
+            background: #3B7B9A;
+            border-color: #3B7B9A;
+            color: white;
+        }
+        
+        /* 9. Color scheme classes */
+        .modal-content.color-scheme-1 {
+            background: white;
+            color: #0d1b2a;
+        }
+        
+        .modal-content.color-scheme-2 {
+            background: #093a4a;
+            color: #f0f8ff;
+        }
+        
+        .modal-content.color-scheme-2 .close-btn {
+            color: #f0f8ff;
+        }
+        
+        .modal-content.color-scheme-3 {
+            background: #e8f4f8;
+            color: #0d1b2a;
+            border: 3px solid #5dade2;
+        }
+        
+        /* 10. Font classes */
+        .modal-content.font-1 {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .modal-content.font-2 {
+            font-family: 'Georgia', serif;
+        }
+        
+        .modal-content.font-3 {
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    <div class="header-container">
+        <div class="logo">
+            <img src="Blue Future Logo.png" alt="BlueFuture Logo - Protecting Life Below Water">
+            <div>
+                <h1>BlueFuture</h1>
+                <p>Protecting Life Below Water</p>
+            </div>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="gallery.html"class="active">Gallery</a></li>
+                <li><a href="splash.html">Splash</a></li>
+                <li><a href="ais.html">Impact Simulator</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="sitemap.html">Sitemap</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <main>
+        <h1 class="section-title">Marine Life Gallery</h1>
+        <p class="text-center">Click on any image to learn more about ocean life</p>
+
+        <!-- Gallery Thumbnails (at least 4) -->
+        <div class="gallery-grid" id="galleryGrid">
+            <!-- Item 1: Coral Reef -->
+            <div class="thumb" data-index="0">
+                <img src="https://media.istockphoto.com/id/153215316/photo/a-sea-turtle-in-a-coral-reef-at-the-bottom-of-the-sea.jpg?s=2048x2048&w=is&k=20&c=MfiLXx5jY0A_rkawCtoHOaVb-J8DgIQsSBz9Ijgo4gw=" alt="colorful Corals with a Turtle">
+                <h4>Coral Reefs</h4>
+                <p>Rainforests of the sea</p>
+            </div>
+
+            <!-- Item 2: Sea Turtles -->
+            <div class="thumb" data-index="1">
+                <img src="https://media.istockphoto.com/id/2209140878/photo/close-up-of-a-large-sea-turtle-lying-on-seabed-in-field-of-seaweed.jpg?s=2048x2048&w=is&k=20&c=8NV_Lg3_rYl46a25HUqEw9bYIYqFF6h8ioJ0wGjth18=" alt="Green Sea Turtle">
+                <h4>Sea Turtles</h4>
+                <p>Ancient ocean travelers</p>
+            </div>
+
+            <!-- Item 3: Mangroves -->
+            <div class="thumb" data-index="2">
+                <img src="https://media.istockphoto.com/id/2202523472/photo/mangrove-forest.jpg?s=2048x2048&w=is&k=20&c=f66VfKdhQTZj8JO5WuuqzuvXXHKm29FYMrmIYzHS5d4=" alt="Mangrove forest">
+                <h4>Mangroves</h4>
+                <p>Coastal protectors</p>
+            </div>
+
+            <!-- Item 4: Plastic Pollution -->
+            <div class="thumb" data-index="3">
+                <img src="https://media.istockphoto.com/id/1141999585/photo/underwater-global-problem-with-plastic-rubbish.jpg?s=2048x2048&w=is&k=20&c=Zhj3pYzml3DBWx3SeSrPad_YcrMzcUbyEGc-8PGmTFc=" alt="Ocean plastic pollution">
+                <h4>Plastic Crisis</h4>
+                <p>Threat to marine life</p>
+            </div>
+
+            <!-- Extra 5th item (optional) -->
+            <div class="thumb" data-index="4">
+                <img src="https://media.istockphoto.com/id/891200678/photo/humpback-whale-breaching-at-sunset.jpg?s=2048x2048&w=is&k=20&c=BTDQ_Cgrc4dTc5JPCpZvEId7x_D-XewdrhxFMXKnt50=" alt="Whale">
+                <h4>Whales</h4>
+                <p>Ocean giants</p>
+            </div>
+        </div>
+
+        <!-- MODAL / Extended View (hidden initially) -->
+        <div id="modal" class="modal">
+            <div class="modal-content" id="modalContent">
+                <span class="close-btn" id="closeModal">&times;</span>
+                
+                <h2 id="modalTitle">Title</h2>
+                <img id="modalImage" class="modal-image" src="" alt="Expanded view">
+                <p id="modalDescription">Description</p>
+                
+                <!-- Control Panel for customization -->
+                <div class="control-panel">
+                    <h3>Customize View:</h3>
+                    <p><b>Color Scheme:</b></p>
+                    <button class="style-btn active" onclick="changeColorScheme(1)">Light</button>
+                    <button class="style-btn" onclick="changeColorScheme(2)">Dark</button>
+                    <button class="style-btn" onclick="changeColorScheme(3)">Blue Accent</button>
+                    
+                    <p><b>Font Style:</b></p>
+                    <button class="style-btn active" onclick="changeFont(1)">Default</button>
+                    <button class="style-btn" onclick="changeFont(2)">Serif</button>
+                    <button class="style-btn" onclick="changeFont(3)">Monospace</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>BlueFuture</h3>
+                <p>Working towards SDG 14: Life Below Water</p>
+                <p>Conserve and sustainably use the oceans, seas and marine resources</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="pageEditor_ST1.html">Page Editor (Student 1)</a></p>
+                <p><a href="validation_ST1.html">Validation Page</a></p>
+                <p>Accessibility Statement</p>
+            </div>
+            <div class="footer-section">
+                <h3>Accessibility Statement</h3>
+                <p>Use of semantic HTML structure</p><!--header, nav, main, footer-->
+                <p>All images include alternative text</p><!--alt usage-->
+                <p>Readable fonts and clear colour contrast</p>
+                <p>Simple and consistent navigation</p>
+                <p>Keyboard-friendly navigation</p>
+
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: <a href="mailto:w2181927@westminster.ac.uk">w2181927@westminster.ac.uk</a> </p>
+                <p>© 2026 BlueFuture Team</p>
+                
+            </div>
+            <div class="footer-section">
+                <h3>Student 01</h3> 
+                <p>Name:S.D. Manula Anusara Senanayaka </p>
+                <p>Student ID:20241243</p>
+                <p>Role:Template, Home Page & Gallery</p>
+
+            </div>
+            <!-- FOOTER - UPDATE WITH YOUR LINKS -->
+        </div>
+        <div class="footer-bottom">
+            <p>This website is created for educational purposes - University of Westminster</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT for interactivity -->
+    <script>
+        // Gallery Data
+        const galleryData = [
+            {
+                title: "Coral Reefs",
+                image: "Colorful Corals with a Turtle.jpg",
+                description: "Coral reefs are often called 'rainforests of the sea'. They cover less than 1% of the ocean floor but support 25% of all marine life. Unfortunately, 50% of coral reefs have been lost due to climate change and pollution.",
+                alt: "Vibrant coral reef with fish"
+            },
+            {
+                title: "Sea Turtles",
+                image: "Green Sea Turtle.jpg",
+                description: "Sea turtles have existed for over 100 million years. All seven species are threatened or endangered. They help maintain healthy seagrass beds and coral reefs. Plastic pollution is a major threat as turtles mistake plastic bags for jellyfish.",
+                alt: "Green sea turtle swimming"
+            },
+            {
+                title: "Mangroves",
+                image: "Mangroves Forest.jpg",
+                description: "Mangrove forests protect coastlines from erosion and storms. They store up to 10x more carbon than terrestrial forests. 35% of mangroves have been lost in the last 20 years due to coastal development.",
+                alt: "Mangrove forest"
+            },
+            {
+                title: "Plastic Pollution",
+                image: "Ocean plastic pollution.jpg",
+                description: "8 million tons of plastic enter oceans annually. By 2050, there could be more plastic than fish in the ocean. Microplastics have been found in 100% of sea turtle species and in seafood consumed by humans.",
+                alt: "Ocean plastic pollution"
+            },
+            {
+                title: "Whales",
+                image: "Whale.jpg",
+                description: "Whales play a crucial role in ocean ecosystems. Their waste fertilizes phytoplankton which produces 50% of Earth's oxygen. A single whale captures as much carbon as thousands of trees.",
+                alt: "Humpback whale breaching"
+            }
+        ];
+
+        // Get DOM elements
+        const modal = document.getElementById('modal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalImage = document.getElementById('modalImage');
+        const modalDescription = document.getElementById('modalDescription');
+        const closeBtn = document.getElementById('closeModal');
+        const modalContent = document.getElementById('modalContent');
+
+        // Add click events to thumbnails
+        const thumbnails = document.querySelectorAll('.thumb');
+        thumbnails.forEach(thumb => {
+            // Hover effect is handled by CSS, but we need click for JS
+            thumb.addEventListener('click', function() {
+                const index = this.getAttribute('data-index');
+                showExtendedView(index);
+            });
+        });
+
+        // Function to show extended view
+        function showExtendedView(index) {
+            const data = galleryData[index];
+            modalTitle.textContent = data.title;
+            modalImage.src = data.image;
+            modalImage.alt = data.alt;
+            modalDescription.textContent = data.description;
+            
+            // Reset to default styles
+            modalContent.className = 'modal-content color-scheme-1 font-1';
+            
+            // Show modal
+            modal.style.display = 'flex';
+        }
+
+        // Close modal
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+
+        // Click outside to close
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Color scheme customization
+        function changeColorScheme(scheme) {
+            // Remove existing color scheme classes
+            modalContent.classList.remove('color-scheme-1', 'color-scheme-2', 'color-scheme-3');
+            
+            // Add new scheme
+            modalContent.classList.add(`color-scheme-${scheme}`);
+            
+            // Update button active states
+            updateActiveButton('color', scheme);
+        }
+
+        // Font customization
+        function changeFont(font) {
+            // Remove existing font classes
+            modalContent.classList.remove('font-1', 'font-2', 'font-3');
+            
+            // Add new font
+            modalContent.classList.add(`font-${font}`);
+            
+            // Update button active states
+            updateActiveButton('font', font);
+        }
+
+        // Helper to update button states
+        function updateActiveButton(type, activeIndex) {
+            const buttons = document.querySelectorAll(`.style-btn`);
+            buttons.forEach(btn => {
+                if (btn.textContent.includes('Light') && type === 'color' && activeIndex === 1) btn.classList.add('active');
+                else if (btn.textContent.includes('Dark') && type === 'color' && activeIndex === 2) btn.classList.add('active');
+                else if (btn.textContent.includes('Blue') && type === 'color' && activeIndex === 3) btn.classList.add('active');
+                else if (btn.textContent.includes('Default') && type === 'font' && activeIndex === 1) btn.classList.add('active');
+                else if (btn.textContent.includes('Serif') && type === 'font' && activeIndex === 2) btn.classList.add('active');
+                else if (btn.textContent.includes('Monospace') && type === 'font' && activeIndex === 3) btn.classList.add('active');
+                else btn.classList.remove('active');
+            });
+        }
+    </script>
+</body>
+</html>
