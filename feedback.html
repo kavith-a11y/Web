@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueFuture - Life Below Water</title>
+    <!-- GLOBAL CSS - DO NOT CHANGE -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Page specific CSS will go here -->
+         
+    <style>
+        /* =========================================
+           STUDENT 3: OCEAN THEME STYLES (SDG 14)
+           ========================================= */
+
+        /* 2. Basic Page Setup */
+        body { 
+            font-family: Arial, sans-serif; 
+            line-height: 1.6; 
+            background-color: #093a4a; 
+            color: #0d1b2a;         
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* 3. Section Containers */
+        .page-section { 
+            max-width: 1000px; 
+            margin: 40px auto 50px auto; 
+            padding: 30px;
+            background-color: #cff9f9; 
+            border-radius: 8px;
+            border-top: 5px solid #3B7B9A; 
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
+        }
+
+        h2, h3, h4 { color: #3B7B9A; margin-top: 0; }
+
+        .section-title { 
+            border-bottom: 2px solid #3B7B9A; 
+            padding-bottom: 10px; 
+            text-align: center; 
+            font-size: 2.2rem; 
+        }
+
+        .section-subtitle { 
+            text-align: center; margin-bottom: 30px; color: #555; font-size: 1.1rem; 
+        }
+
+        /* =========================================
+           SCROLL BUTTONS
+           ========================================= */
+        .nav-btn-group {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .nav-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 2px solid #555; 
+            color: #555;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background-color: #1e8bc3;
+            color: white;
+            border-color: #1e8bc3;
+        }
+
+        /* =========================================
+           SCROLLABLE PROGRAMS STYLES 
+           ========================================= */
+        .programs-header {
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            margin-bottom: 20px;
+        }
+
+        .filter-dropdown {
+            padding: 8px; 
+            border-radius: 4px; 
+            border: 1px solid #c6bebe; 
+        }
+        
+        .scroll-container {
+            display: flex; 
+            overflow-x: auto; 
+            overflow-y: hidden;
+            background: #e6f7f7; 
+            border: 1px solid #c6bebe; 
+            border-radius: 8px;
+            padding: 15px 15px 20px 15px; 
+            gap: 20px; 
+            scroll-behavior: smooth;
+        }
+        /* Hides the ugly scrollbar on some browsers so the buttons shine */
+        .scroll-container::-webkit-scrollbar, .reviews-grid::-webkit-scrollbar { display: none; }
+
+        .program-card {
+            min-width: 320px; 
+            flex: 0 0 auto; 
+            background: #A5DEF1; 
+            padding: 20px; 
+            border-radius: 8px; 
+            border-top: 4px solid #1e8bc3; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between;
+        }
+
+        .program-img { 
+            width: 100%; 
+            height: 140px; 
+            object-fit: cover; 
+            border-radius: 8px; 
+            margin-bottom: 15px; 
+        }
+
+        .program-info { 
+            flex-grow: 1; 
+            margin-bottom: 15px; 
+        }
+
+        .program-info h3 { 
+            margin: 0 0 5px 0; 
+            font-size: 1.2rem; 
+        }
+
+        .program-info p { 
+            margin: 0; 
+            font-size: 0.95rem; 
+        }
+        
+        .card-buttons { 
+            display: flex; 
+            gap: 10px; 
+            margin-top: 15px; 
+        }
+
+        .action-btn, .submit-btn { 
+            flex: 1; 
+            background-color: #1e8bc3; 
+            color: white; 
+            border: none; 
+            padding: 10px; 
+            border-radius: 4px; 
+            cursor: pointer; 
+            font-weight: bold;
+            transition: background 0.3s; 
+            text-align: center;
+        }
+
+        .btn-outline {
+            background-color: transparent; 
+            color: #1e8bc3; 
+            border: 2px solid #1e8bc3; 
+        }
+
+        .action-btn:hover, .submit-btn:hover { 
+            background-color: #5dade2; 
+            color: white; 
+        }
+
+        .btn-outline:hover { 
+            background-color: #1e8bc3; 
+            color: white; 
+        }
+        .submit-btn { 
+            width: 100%; 
+            font-size: 1.1rem; 
+        }
+
+
+        /* =========================================
+           REVIEWS STYLES 
+           ========================================= */
+        .reviews-layout { 
+            display: flex; 
+            gap: 40px; 
+            align-items: flex-start; 
+        }
+
+        .overall-rating { flex: 0 0 200px; text-align: left; }
+        .overall-rating h3 { font-size: 4rem; color: #1e8bc3; margin: 0; line-height: 1; }
+        .overall-rating h4 { font-size: 1.2rem; margin: 5px 0; }
+        
+        .reviews-grid { display: flex; overflow-x: auto; gap: 20px; padding-bottom: 15px; flex-grow: 1; scroll-behavior: smooth; }
+        
+        .review-card { 
+            min-width: 280px; flex: 0 0 auto; background: #fff; padding: 20px; border-radius: 8px; border: 1px solid #ddd; 
+        }
+        .reviewer-info { font-size: 0.85rem; color: #666; font-style: italic; margin-top: 15px; }
+        .rating-stars { color: #1e8bc3; font-weight: bold; margin: 0 0 10px 0; }
+
+        /* =========================================
+           FEEDBACK FORM STYLES
+           ========================================= */
+        fieldset { border: 2px solid #3B7B9A; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+        legend { font-weight: bold; padding: 0 10px; color: #3B7B9A; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; font-weight: bold; margin-bottom: 5px; }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;
+        }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus { 
+            outline: none; border-color: #1e8bc3; box-shadow: 0 0 5px #5dade2;
+        }
+        .error-message { color: red; font-size: 0.85rem; margin-top: 5px; }
+
+        /* Header & Footer */
+        header { background: #3B7B9A; color: white; padding: 20px; text-align: center; }
+        footer { background: #062631; color: white; padding: 20px; text-align: center; margin-top: 50px; }
+        footer a { color: #5dade2; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <!-- HEADER - DO NOT CHANGE STRUCTURE -->
+    <header>
+    <div class="header-container">
+        <div class="logo">
+            <img src="logo.png" alt="BlueFuture Logo - Protecting Life Below Water">
+            <div>
+                <h1>BlueFuture</h1>
+                <p>Protecting Life Below Water</p>
+            </div>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="splash.html">Splash</a></li>
+                <li><a href="ais.html">Impact Simulator</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="sitemap.html">Sitemap</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <!-- MAIN CONTENT - ADD YOUR PAGE CONTENT HERE -->
+   
+    <main id="main-content">
+
+        <section class="page-section" id="programs-section">
+            <h2 class="section-title">Marine Protection Programmes</h2>
+            
+            <div class="programs-header">
+                
+                <p style="margin: 0; color: #555;"><strong> 4 volunteer programs found </strong></p>
+                
+                <div style="display: flex; gap: 15px; align-items: center;">
+                    
+                    <div class="nav-btn-group">
+                        <button class="nav-btn" onclick="scrollContainer('programs-scroll', -1000)"> ❮  </button>
+                        <button class="nav-btn" onclick="scrollContainer('programs-scroll', 340)">  ❯  </button>
+                    </div>
+
+                    <div>
+                        <label for="filterDropdown"><strong> Sort By: </strong></label>
+                        <select id="filterDropdown" class="filter-dropdown">
+                            <option>  Most Popular      </option>
+                            <option>  Student-friendly  </option>
+                            <option>  Nearest Coastline </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-container" id="programs-scroll">
+                
+                <div class="program-card">
+                    <img src="CoastalBeachCleanup.jpg"alt="Volunteers cleaning beach" class="program-img">
+                    
+                    <div class="program-info">
+                        <h3>Coastal Beach Cleanup</h3>
+                        <p>Join our weekend team to <br>remove plastic waste from local beaches.</p>
+                    </div>
+
+                    <div class="card-buttons">
+                        <button class="action-btn btn-outline"> Learn More </button> 
+                    </div>
+                </div>
+
+                <div class="program-card">
+                    <img src="CoralReefMonitoring.jpg" alt=" Save Coral Reef" class="program-img">
+
+                    <div class="program-info">
+                        <h3>Coral Reef Monitoring</h3>
+                        <p>Help marine biologists to <br> track coral bleaching data and plant new coral.</p>
+                    </div>
+
+                    <div class="card-buttons">
+                        <button class="action-btn btn-outline"> Learn More </button>
+                    </div>
+                </div>
+
+                <div class="program-card">
+                    <img src="SeaTurtleRescue.jpg" alt="Sea Turtle" class="program-img">
+
+                    <div class="program-info">
+                        <h3>Sea Turtle Rescue</h3>
+                        <p>Volunteer at the turtle hatchery to <br> protect nests and baby turtles.</p>
+                    </div>
+
+                    <div class="card-buttons">
+                        <button class="action-btn btn-outline"> Learn More </button>
+                    </div>
+                </div>
+
+                <div class="program-card">
+                    <img src="ZeroPlasticCampaign.jpg" alt="No Plastic Sign" class="program-img">
+                    
+                    <div class="program-info">
+                        <h3>Zero Plastic Campaign</h3>
+                        <p>Run awareness booths on<br> campus about the dangers of single-use plastics.</p>
+                    </div>
+
+                    <div class="card-buttons">
+                        <button class="action-btn btn-outline"> Learn More </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="page-section" id="reviews-section">
+            <h2 class="section-title">Volunteer Reviews</h2>
+            
+            <div class="reviews-layout">
+                <div class="overall-rating">
+                    <h3>9.5<span style="font-size: 1.5rem; color: #555;">/10</span></h3>
+                    <h4>Exceptional</h4>
+                    <p style="font-size: 0.85rem; color: #555;">Based on 210 student reviews.</p>
+                    <button class="action-btn btn-outline" style="margin-top: 15px; width: 100%;">See all reviews</button>
+                    
+                    <div class="nav-btn-group" style="margin-top: 90px;">
+                        <button class="nav-btn" onclick="scrollContainer('reviews-scroll', -300)"> ❮ </button>
+                        <button class="nav-btn" onclick="scrollContainer('reviews-scroll', 300)">  ❯ </button>
+                    </div>
+                </div>
+
+                <div class="reviews-grid" id="reviews-scroll">
+                    <div class="review-card">
+                        <h4>Coastal Beach Cleanup</h4>
+                        <p class="rating-stars">10/10 Excellent</p>
+                        <p>The beach cleanup<br> made me realize how much plastic <br>we actually use.<br> Highly recommend!<br> <a href="#" style="color: #1e8bc3;">See more</a></p>
+                        <p class="reviewer-info">- nomuthu, Oct 12, 2025</p>
+                    </div>
+
+                    <div class="review-card">
+                        <h4>Sea Turtle Rescue</h4>
+                        <p class="rating-stars">9/10 Great</p>
+                        <p>Helping release the baby turtles<br> into the ocean safely was magical.<br> <a href="#" style="color: #1e8bc3;">See more</a></p>
+                        <p class="reviewer-info">- wedage, Nov 05, 2025</p>
+                    </div>
+
+                    <div class="review-card">
+                        <h4>Zero Plastic Campaign</h4>
+                        <p class="rating-stars">8/10 Good</p>
+                        <p>The zero plastic campaign <br>taught me a lot about<br> marine biology and recycling.<br> <a href="#" style="color: #1e8bc3;">See more</a></p>
+                        <p class="reviewer-info">- kulee, Jan 18, 2025</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section" id="feedback-section">
+            <h2 class="section-title">Submit Your Feedback</h2>
+
+            <div id="successMessage" style="color: green; font-weight: bold; margin-bottom: 15px; display: none;"></div>
+
+            <form id="feedbackForm" action="#" method="POST">
+                
+                <fieldset>
+                    <legend>Personal Details</legend>
+                    
+                    <div class="form-group">
+                        <label for="fullName">Full Name:</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Enter your name">
+                        <div id="nameError" class="error-message"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="emailAddress">Email Address:</label>
+                        <input type="email" id="emailAddress" name="emailAddress" placeholder="Enter your Email">
+                        <div id="emailError" class="error-message"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phoneNumber">Telephone Number:</label>
+                        <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Enter your Phone Number">
+                        <div id="phoneError" class="error-message"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="userAddress">Address:</label>
+                        <textarea id="userAddress" name="userAddress" rows="2" placeholder="Enter Your address"></textarea>
+                        <div id="addressError" class="error-message"></div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Ocean Experience Feedback</legend>
+
+                    <div class="form-group">
+                        <label for="eventDate">Date you participated:</label>
+                        <input type="date" id="eventDate" name="eventDate">
+                        <div id="dateError" class="error-message"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="eventDateTime">Date & Time of submission:</label>
+                        <input type="datetime-local" id="eventDateTime" name="eventDateTime">
+                        <div id="dateTimeError" class="error-message"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="siteRating"> Programme Rating: </label>
+                        <select id="siteRating" name="siteRating">
+                            <option value="" disabled selected>Select a rating...</option>
+                            <option value="5"> 5 - Excellent </option>
+                            <option value="4"> 4 - Good      </option>
+                            <option value="3"> 3 - Average   </option>
+                            <option value="2"> 2 - Poor      </option>
+                            <option value="1"> 1 - Terrible  </option>
+                        </select>
+                        <div id="ratingError" class="error-message"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="userComments">Message / Comments:</label>
+                        <textarea id="userComments" name="userComments" rows="4" maxlength="250" placeholder="Your thoughts on helping the oceans..."></textarea>
+
+                        <div style="display: flex; justify-content: space-between; margin-top: 5px;">
+                            <div id="commentError" class="error-message"></div>
+                            <span id="charCounter" style="font-size: 0.85rem; color: #0d1b2a;">250 characters remaining</span>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="submit-btn">Submit Feedback</button>
+
+            </form>
+        </section>
+
+    </main>
+
+        <script>
+        // NEW: Function to scroll containers when buttons are clicked!
+        function scrollContainer(containerId, offset) {
+            const container = document.getElementById(containerId);
+            if (container) {
+                // scrollBy tells the container to move 'offset' amount of pixels sideways smoothly
+                container.scrollBy({ left: offset, behavior: 'smooth' });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('feedbackForm');
+            const commentsInput = document.getElementById('userComments');
+            const charCounter = document.getElementById('charCounter');
+            const successMessage = document.getElementById('successMessage');
+            const maxLength = 250;
+
+            // Live Character Counter
+            commentsInput.addEventListener('input', function() {
+                const remaining = maxLength - commentsInput.value.length;
+                charCounter.textContent = remaining + ' characters remaining';
+                charCounter.style.color = remaining <= 20 ? 'red' : '#0d1b2a';
+                charCounter.style.fontWeight = remaining <= 20 ? 'bold' : 'normal';
+            });
+
+            // Custom Form Validation
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); 
+                let isValid = true;
+
+                const nameValue = document.getElementById('fullName').value.trim();
+                const emailValue = document.getElementById('emailAddress').value.trim();
+                const phoneValue = document.getElementById('phoneNumber').value.trim();
+                const addressValue = document.getElementById('userAddress').value.trim();
+                const dateValue = document.getElementById('eventDate').value;
+                const dateTimeValue = document.getElementById('eventDateTime').value;
+                const ratingValue = document.getElementById('siteRating').value;
+                const commentsValue = document.getElementById('userComments').value.trim();
+
+                document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+                successMessage.style.display = 'none';
+
+                if (nameValue === '') {
+                    document.getElementById('nameError').textContent = 'Name is required.';
+                    isValid = false;
+                }
+
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (emailValue === '' || !emailRegex.test(emailValue)) {
+                    document.getElementById('emailError').textContent = 'Valid email is required.';
+                    isValid = false;
+                }
+
+                if (phoneValue === '') {
+                    document.getElementById('phoneError').textContent = 'Phone number is required.';
+                    isValid = false;
+                }
+
+                if (addressValue === '') {
+                    document.getElementById('addressError').textContent = 'Address is required.';
+                    isValid = false;
+                }
+
+                if (dateValue === '') {
+                    document.getElementById('dateError').textContent = 'Please select a date.';
+                    isValid = false;
+                }
+  
+                if (dateTimeValue === '') {
+                    document.getElementById('dateTimeError').textContent = 'Please select a date and time.';
+                    isValid = false;
+                }
+
+                if (ratingValue === '') {
+                    document.getElementById('ratingError').textContent = 'Please select a rating.';
+                    isValid = false;
+                }
+
+                if (commentsValue === '') {
+                    document.getElementById('commentError').textContent = 'Comments are required.';
+                    isValid = false;
+                }
+
+                if (isValid) {
+                    successMessage.textContent = 'Success! Thank you ' + nameValue + ', your ocean feedback was submitted.';
+                    successMessage.style.display = 'block';
+                    form.reset();
+                    charCounter.textContent = '250 characters remaining';
+                    charCounter.style.color = '#0d1b2a';
+                }
+            });
+        });
+    </script>
+
+    <!-- FOOTER - UPDATE WITH YOUR LINKS -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>BlueFuture</h3>
+                <p>Working towards SDG 14: Life Below Water</p>
+                <p>Conserve and sustainably use the oceans, seas and marine resources</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <!-- Update this to your own  -->
+                <p><a href="pageEditor_ST1.html">Page Editor (Student 1)</a></p> <!--Add your student roll number here-->
+                <p><a href="validation_ST1.html">Validation</a></p>
+                
+            </div>
+            <div class="footer-section">
+                <h3>Accessibility Statement</h3>
+                <p>Use of semantic HTML structure</p><!--header, nav, main, footer-->
+                <p>All images include alternative text</p><!--alt usage-->
+                <p>Readable fonts and clear colour contrast</p>
+                <p>Simple and consistent navigation</p>
+                <p>Keyboard-friendly navigation</p>
+
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <!-- Add your westminster mail here -->
+                <p>Email: info@bluefuture.org</p>
+                <p>© 2026 BlueFuture Team</p>
+            </div>
+            <div class="footer-section">
+                <h3>Student 01</h3> <!-- Add your role number here -->
+                <!-- Add your name here -->
+                <p>Name: </p>
+                <!-- Add your St ID here -->
+                <p>Student ID:</p>
+                <p>Content Page:</p><!--Add your content title-->
+                <p>Role:</p><!-- Add your work here -->
+
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>This website is created for educational purposes - University of Westminster</p>
+        </div>
+    </footer>
+</body>
+</html>
