@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Editor Student - 4</title>
+
+    <link rel="stylesheet" href="css/pageEditor_validator.css"> <!-- External CSS link -->
+
+</head>
+<body>
+    
+    <!-- Update the header and the footer to be consistent with the rest of the pages you implemented -->
+
+    <header id="top">
+        <h1>Blue Future</h1>
+    </header>
+
+    <section class="stud">
+        <center><h2>Hivin Jayawickrama, Blue Future, Student 4</h2></center>
+    </section>
+
+    <div class="container">
+        <!-- Main content area -->
+        <main>
+
+            <!-- Update those first three sections for the pages you were responsible to implement -->
+
+            <section>
+                <h2 id="splash">User Profile</h2>
+                    <h3>Technical Description</h3>
+                        <p> The User Profile page provides an interactive experience by collecting user information through JavaScript prompt() functions, allowing step-by-step data input. A structured semantic HTML layout is used, with sections and containers to organise content clearly. Dynamic content is generated using DOM manipulation methods such as getElementById() and innerHTML, enabling real-time updates of the user’s profile on the page. A completion percentage feature is implemented using basic calculations to enhance user engagement and provide feedback. CSS styling is applied to maintain a clean and consistent layout, while ensuring readability and responsiveness across devices. Accessibility is supported through the use of clear labels, structured headings, and properly defined content sections.</p> 
+                    
+                    <h3>Accessibility</h3>
+                        <p>The User Profile page is designed with accessibility in mind to ensure an inclusive and user-friendly experience. Semantic HTML elements such as headings and structured sections are used to improve screen reader navigation and content understanding. All images include descriptive alt attributes to provide meaningful context for visually impaired users. Clear and readable text with sufficient colour contrast is maintained throughout the page to enhance visibility. The interactive profile creation process, including JavaScript prompts, is simple and easy to follow, ensuring usability for a wide range of users. Additionally, all navigation links are keyboard-accessible, allowing users to interact with the page without relying on a mouse. The overall layout is kept clean and consistent to support better readability and accessibility across different devices.</p>
+                    
+                    <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
+                        <p><a href="validation_ST4.html#splashVal">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+
+                    <h3>Link to the page</h3>
+                        <p><a href="profile.html">Include a link to the actual page you describe.</a></p>
+            </section>
+
+            <section>
+                <h2 id="ais">Sitemap</h2>
+                    <h3>Technical Description</h3>
+                        <p>The Sitemap is engineered as a structured navigational hub, utilizing a semantic HTML5 hierarchy to ensure both clarity and SEO optimization. It employs a nested list architecture, styled with CSS Flexbox to maintain a clean, organized layout across various screen dimensions. From a functional standpoint, the sitemap serves as a centralized directory, leveraging anchor tags and internal ID linking to facilitate seamless transitions between the Action Impact Simulator and other core site modules. This technical mapping not only simplifies the user journey but also provides a clear blueprint of the site's information architecture for search engine crawlers.</p> 
+
+                    <h3>Accessibility</h3>
+                        <p>The Sitemap ensures universal access by adhering to a strict, logical heading structure that begins with a clear <strong>h1</strong> and descends to <strong>h3</strong>, allowing users of assistive technologies like screen readers to easily understand the page hierarchy and jump directly to specific content sections. Every navigational link features high-contrast text and a distinct focus state, ensuring that keyboard-only users can identify their current location within the site map. Furthermore, the use of semantic HTML list elements provides essential context to screen readers, ensuring that the relationship between parent categories and sub-pages is communicated clearly and effectively to all users, regardless of their browsing method.</p>
+
+                    <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
+                        <p><a href="validation_ST4.html#volunteerVal">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+
+                        
+                    <h3>Link to the page</h3>
+                        <p><a href="sitemap.html">Include a link to the actual page you describe.</a></p>
+            </section>
+
+            <section>
+                <h2 id="content">Content Page</h2>
+                    <h3>Technical Description</h3>
+                        <p>The Sustainable Fishing educational page is engineered using semantic HTML5 landmarks, including header, main, and footer, to establish a clear and organized document structure. To assist users in navigating the text-heavy sections on overfishing and policy, the page features a functional internal navigation menu using anchor tags and a fixed "Go to Top" button for seamless scrolling. Internal CSS is utilized to style educational diagrams with specific dimensions and rounded borders, ensuring a professional visual consistency across the "BlueFuture" platform. Finally, the technical implementation ensures data integrity by using clear list structures for sustainability solutions and responsive layout techniques that adapt to various screen sizes.</p> 
+
+                    <h3>Accessibility</h3>
+                        <p>The Sustainable Fishing page ensures comprehensive accessibility by utilizing semantic HTML5 landmarks that allow screen reading software to interpret the document’s natural flow. Every educational image regarding marine life and fishing practices includes a descriptive alt attribute, providing essential context for visually impaired users. Furthermore, the inclusion of internal jump links and a prominent back-to-top button facilitates efficient keyboard navigation, while a strict logical heading hierarchy (h1 through h3) allows assistive technologies to skip directly to specific sections like Environmental Impact or Government Policies, ensuring an inclusive learning experience for all.</p>
+
+                    <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
+                        <p><a href="validation_ST4.html#contentVal">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+
+                        
+                    <h3>Link to the page</h3>
+                        <p><a href="content_ST4.html">Include a link to the actual page you describe.</a></p>
+            </section>
+
+            <section>
+                <h2 id="challenge"> Challenges and Lessons Learned</h2>
+                    <p>The development of the content.html, profile.html, and sitemap.html modules required solving complex integration and logic issues. During the consolidation phase, CSS specificity conflicts occurred between my custom styles and the global template; I resolved this by refactoring my selectors into unique class namespaces to prevent style leakage across the site. Within content.html, the W3C validator identified nesting errors in the navigation lists, which were corrected to ensure a valid Document Object Model tree. For the sitemap.html and splash screen, responsive web design challenges were addressed by implementing fluid CSS layouts and media queries, ensuring visual fidelity across desktop and mobile viewports. Finally, a state-management bug in the Action Impact Simulator where the background failed to reset at a zero score was resolved by updating the JavaScript conditional logic to handle base-case values dynamically.</p> 
+            </section>
+
+            <section style="padding-left: 30px;">
+                <h2 id="compliance"> Compliance</h2>
+                    <p>To make sure my web pages follow the Janet Acceptable Use Policy for the university network, I focused on these main rules while building my site:</p><br>
+                    <ul>
+                        <li><b>No Commercial Use:</b>This website is strictly for my university coursework. I am not selling any products, running advertisements, or trying to make money from these pages.</li>
+                        <li><b>Respecting Copyright:</b>All the images, diagrams, and text on my Splash screen, Content page, and Action Impact Simulator are either my own original work, free to use, or properly referenced. I did not use any stolen materials.</li>
+                        <li><b>Appropriate Content:</b>The website is purely educational and professional. There is no offensive, illegal, or inappropriate material on any of the pages I created.</li>
+                        <li><b>Network Safety:</b>I wrote clean HTML, CSS, and JavaScript so my pages load quickly without wasting the university's internet bandwidth. My code is safe and does not contain any viruses or harmful scripts that could damage the network.</li>
+                        <li><b>User Privacy:</b>My interactive pages, like the Action Impact Simulator, just run basic math in the browser. I am not secretly collecting or storing any personal information from the people who use the site.</li>
+                    </ul> 
+
+                    
+            </section>
+
+            <section>
+                <h2 id="compliance"> Group Meetings and Individual Contribution Log</h2>
+                    <p>Include a Group Meetings and Contribution Log that documents your engagement with group work.</p> 
+                    Requirements:
+                        <ul> 
+                            <li>A minimum of six (6) group meetings must be recorded.</li>
+                            <li>Each student must provide their own account of the meetings.</li>
+                            <li>The log must focus on individual contribution, not just group activity.</li>
+                        </ul>
+                        <p>Feel free to follow the example table structure below:</p>
+
+                        <table >
+    
+                            <thead>
+                                <tr>
+                                    <th colspan="6">Group Meetings and Contribution Log</th>
+                                </tr>
+                                <tr>
+                                    <th>Meeting</th>
+                                    <th>Date &amp; Time</th>
+                                    <th>Format</th>
+                                    <th>Objective</th>
+                                    <th>Attended</th>
+                                    <th>Your Individual Contribution</th>
+                                </tr>
+                            </thead>
+                        
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>13 Feb 2026</td>
+                                    <td>Face-to-face</td>
+                                    <td>Agree SDG and assign roles</td>
+                                    <td>Yes</td>
+                                    <td>I agreed to take responsibility for the role of student 2.</td>
+                                </tr>
+                        
+                                <tr>
+                                    <td>2</td>
+                                    <td>20 Feb 2026</td>
+                                    <td>Online</td>
+                                    <td>Review Home Page design</td>
+                                    <td>Yes</td>
+                                    <td>I helped deciding the color pallate and layout.</td>
+                                </tr>
+                        
+                                <tr>
+                                    <td>3</td>
+                                    <td>03 Mar 2026</td>
+                                    <td>Face-to-Face</td>
+                                    <td>Progress review</td>
+                                    <td>Yes</td>
+                                    <td>Clarified existing doubts and analyzed the progress of the website.</td>
+                                </tr>
+                        
+                                <tr>
+                                    <td>4</td>
+                                    <td>10 Mar 2026</td>
+                                    <td>Face-to-Face</td>
+                                    <td>Validation and testing</td>
+                                    <td>Yes</td>
+                                    <td>I helped to resolve the css overlaps and file names.</td>
+                                </tr>
+                        
+                                <tr>
+                                    <td>5</td>
+                                    <td>17 Mar 2026</td>
+                                    <td>Online</td>
+                                    <td>Validation and testing</td>
+                                    <td>Yes</td>
+                                    <td>Helped checking the overall functionality of the webpage.</td>
+                                </tr>
+                        
+                                <tr>
+                                    <td>6</td>
+                                    <td>22 Mar 2026</td>
+                                    <td>Online</td>
+                                    <td>Final review & janet rules</td>
+                                    <td>Yes</td>
+                                    <td>I helped checking weather the website follows the specification and meets ceartain rules.</td>
+                                </tr>
+                        
+                            </tbody>
+                        
+                        </table>
+                    
+            </section>
+
+            <section>
+                <h2 id="ref">References</h2>
+                    <ul class="ref">
+                        <li>Google (2026) <i>[AI-generated image using the prompt: "Overfishing Problem generate image"]</i>. Gemini. Available at: <a href="https://gemini.google.com" target="_blank">https://gemini.google.com</a> (Accessed: 27 March 2026).</li>
+                        <li>Google (2026) <i>[AI-generated image using the prompt: "ecosystem_damage.jpg"]</i>. Gemini. Available at: <a href="https://gemini.google.com" target="_blank">https://gemini.google.com</a> (Accessed: 27 March 2026).</li>
+                        <li>Google (2026) <i>[AI-generated image using the prompt: "generate images" based on previous overfishing context]</i>. Gemini. Available at: <a href="https://gemini.google.com" target="_blank">https://gemini.google.com</a> (Accessed: 27 March 2026).</li>     
+                        <li>Google (2026) <i>[AI-generated image using the prompt: "sustainable fishing generate image"]</i>. Gemini. Available at: <a href="https://gemini.google.com" target="_blank">https://gemini.google.com</a> (Accessed: 27 March 2026).</li>
+                        <li>Google (2026) <i>[AI-generated image using the prompt: "Government Policies Governments help control overfishing by introducing laws such as fishing quotas, marine protected areas, and banning destructive fishing practices. generate img"]</i>. Gemini. Available at: <a href="https://gemini.google.com" target="_blank">https://gemini.google.com</a> (Accessed: 27 March 2026).</li>
+                    </ul>
+            </section>
+
+            <p class="top"><a href="#top">Go top</a></p>
+        </main>
+
+        <!-- Sidebar area -->
+        <aside>
+            <h3>Core pages developed:</h3>
+
+        <!-- Customize this to the role you undertook. Keep only the list items you were responsible to develop, delete the rest -->
+            <ul class="top-level-ul" style="padding-left: 30px;">
+                <!-- Keep only the list items you were responsible to develop, delete the rest and update the links to the corresponding markers -->
+                <li>Student 1</li>
+                <ul style="padding-left: 30px;">
+                        <li><a href="home.html">Home page </a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="content_ST1.html">Content</a></li>
+                    </ul>
+                <li>Student 2</li>
+                <ul style="padding-left: 30px;"> 
+                    <li><a href="splash.html">Splash Screen</a></li>
+                    <li><a href="ais.html">Action Impact Simulator</a></li>
+                    <li><a href="content_ST2.html">Content</a></li>
+                </ul>
+                    
+                <li>Student 3</li>
+                    <ul style="padding-left: 30px;">
+                        <li><a href="feedback.html">Feedback</a> </li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="content_ST3.html">Content</a></li>
+                    </ul>
+                <li>Student 4</li>
+                    <ul style="padding-left: 30px;">
+                        <li><a href="profile.html">User Profile </a></li>
+                        <li><a href="sitemap.html">Sitemap</a></li>
+                        <li><a href="content_ST4.html">Content</a></li>
+                    </ul>
+            </ul>
+        </aside>
+    </div>
+
+        <footer>
+        <link rel="stylesheet" href="Style.css">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>BlueFuture</h3>
+      <p>Working towards SDG 14: Life Below Water</p>
+      <p>Conserve and sustainably use the oceans, seas and marine resources</p>
+    </div>
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <!-- Update this to your own  -->
+      <p><a href="pageEditor_ST4.html">Page Editor (Student 4)</a></p>
+      <p><a href="validation_ST4.html">Validation</a></p>
+    </div>
+    <div class="footer-section">
+      <h3>Accessibility Statement</h3>
+      <p>Use of semantic HTML structure</p>
+      <p>All images include alternative text</p>
+      <p>Readable fonts and clear colour contrast</p>
+      <p>Simple and consistent navigation</p>
+      <p>Keyboard-friendly navigation</p>
+
+    </div>
+    <div class="footer-section">
+      <h3>Contact</h3>
+      <!-- Add your westminster mail here -->
+      <p>Email: <a href="mailto:w2182537@westminster.ac.uk">w2182537@westminster.ac.uk</a></p>
+      <p>© 2026 BlueFuture Team</p>
+    </div>
+    <div class="footer-section">
+      <h3>Student 04</h3> <!-- Add your role number here -->
+      <!-- Add your name here -->
+      <p>Name: Hivin Jayawickrama </p>
+      <!-- Add your St ID here -->
+      <p>Student ID: 20240984 / w2182537</p>
+      <p>Role: User Profile & Sitemap </p><!-- Add your work here -->
+
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>This website is created for educational purposes - University of Westminster</p>
+  </div>
+</footer>
+</body>
+</html>

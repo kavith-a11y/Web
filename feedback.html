@@ -4,26 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BlueFuture - Life Below Water</title>
-    <!-- GLOBAL CSS - DO NOT CHANGE -->
-    <link rel="stylesheet" href="style.css">
-    <!-- Page specific CSS will go here -->
+    
+    <link rel="stylesheet" href="style.css"> <!-- GLOBAL CSS - DO NOT CHANGE -->
          
     <style>
-        /* =========================================
-           STUDENT 3: OCEAN THEME STYLES (SDG 14)
-           ========================================= */
-
-        /* 2. Basic Page Setup */
+       
         body { 
             font-family: Arial, sans-serif; 
             line-height: 1.6; 
-            background-color: #093a4a; 
+            background-color: #f0f8ff; 
             color: #0d1b2a;         
             margin: 0;
             padding: 0;
         }
         
-        /* 3. Section Containers */
+        /*  Section Containers */
         .page-section { 
             max-width: 1000px; 
             margin: 40px auto 50px auto; 
@@ -40,16 +35,21 @@
             border-bottom: 2px solid #3B7B9A; 
             padding-bottom: 10px; 
             text-align: center; 
-            font-size: 2.2rem; 
+            font-size: 2.2rem; /* 1rem = 16px. */
+        }
+
+        .nav-menu a.active { 
+            color: #cff9f9; 
         }
 
         .section-subtitle { 
-            text-align: center; margin-bottom: 30px; color: #555; font-size: 1.1rem; 
+            text-align: center; 
+            margin-bottom: 30px; 
+            color: #555; 
+            font-size: 1.1rem; /* 1rem = 16px. */
         }
 
-        /* =========================================
-           SCROLL BUTTONS
-           ========================================= */
+        /* scroll buttonsS */
         .nav-btn-group {
             display: flex;
             gap: 10px;
@@ -62,7 +62,7 @@
             background-color: transparent;
             border: 2px solid #555; 
             color: #555;
-            font-size: 1.2rem;
+            font-size: 1.2rem; /* 1rem = 16px. */
             font-weight: bold;
             cursor: pointer;
             display: flex;
@@ -77,9 +77,6 @@
             border-color: #1e8bc3;
         }
 
-        /* =========================================
-           SCROLLABLE PROGRAMS STYLES 
-           ========================================= */
         .programs-header {
             display: flex; 
             justify-content: space-between; 
@@ -104,6 +101,7 @@
             gap: 20px; 
             scroll-behavior: smooth;
         }
+
         /* Hides the ugly scrollbar on some browsers so the buttons shine */
         .scroll-container::-webkit-scrollbar, .reviews-grid::-webkit-scrollbar { display: none; }
 
@@ -183,50 +181,98 @@
         }
 
 
-        /* =========================================
-           REVIEWS STYLES 
-           ========================================= */
+        /* rewiew  */
         .reviews-layout { 
             display: flex; 
             gap: 40px; 
             align-items: flex-start; 
         }
 
-        .overall-rating { flex: 0 0 200px; text-align: left; }
-        .overall-rating h3 { font-size: 4rem; color: #1e8bc3; margin: 0; line-height: 1; }
-        .overall-rating h4 { font-size: 1.2rem; margin: 5px 0; }
+        .overall-rating { 
+            flex: 0 0 200px; 
+            text-align: left; 
+        }
+        .overall-rating h3 { 
+            font-size: 4rem; 
+            color: #1e8bc3;
+            margin: 0; 
+            line-height: 1; 
+        }
+        .overall-rating h4 { 
+            font-size: 1.2rem; 
+            margin: 5px 0; 
+        }
         
-        .reviews-grid { display: flex; overflow-x: auto; gap: 20px; padding-bottom: 15px; flex-grow: 1; scroll-behavior: smooth; }
+        .reviews-grid { 
+            display: flex; 
+            overflow-x: auto; 
+            gap: 20px; 
+            padding-bottom: 15px; 
+            flex-grow: 1; 
+            scroll-behavior: smooth; 
+        }
         
         .review-card { 
-            min-width: 280px; flex: 0 0 auto; background: #fff; padding: 20px; border-radius: 8px; border: 1px solid #ddd; 
+            min-width: 280px; 
+            flex: 0 0 auto; 
+            background: #fff; 
+            padding: 20px; 
+            border-radius: 8px; 
+            border: 1px solid #ddd; 
         }
-        .reviewer-info { font-size: 0.85rem; color: #666; font-style: italic; margin-top: 15px; }
-        .rating-stars { color: #1e8bc3; font-weight: bold; margin: 0 0 10px 0; }
 
-        /* =========================================
-           FEEDBACK FORM STYLES
-           ========================================= */
-        fieldset { border: 2px solid #3B7B9A; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
-        legend { font-weight: bold; padding: 0 10px; color: #3B7B9A; }
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; font-weight: bold; margin-bottom: 5px; }
+        .reviewer-info { 
+            font-size: 0.85rem; 
+            color: #666; 
+            font-style: italic; 
+            margin-top: 15px; 
+        }
+        .rating-stars { 
+            color: #1e8bc3; 
+            font-weight: bold; 
+            margin: 0 0 10px 0; 
+        }
+
+        /* feedback  */
+        fieldset { 
+            border: 2px solid #3B7B9A; 
+            padding: 20px; 
+            border-radius: 8px;
+            margin-bottom: 20px; 
+        }
+        legend { 
+            font-weight: bold; 
+            padding: 0 10px; 
+            color: #3B7B9A; 
+        }
+        .form-group { 
+            margin-bottom: 15px; 
+        }
+        .form-group label { 
+            display: block; 
+            font-weight: bold; 
+            margin-bottom: 5px; 
+        }
         .form-group input, .form-group select, .form-group textarea {
-            width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;
+            width: 100%; 
+            padding: 10px; 
+            border: 1px solid #ccc; 
+            border-radius: 4px; 
+            box-sizing: border-box;
         }
         .form-group input:focus, .form-group textarea:focus, .form-group select:focus { 
-            outline: none; border-color: #1e8bc3; box-shadow: 0 0 5px #5dade2;
+            outline: none; 
+            border-color: #1e8bc3; 
+            box-shadow: 0 0 5px #5dade2;
         }
-        .error-message { color: red; font-size: 0.85rem; margin-top: 5px; }
-
-        /* Header & Footer */
-        header { background: #3B7B9A; color: white; padding: 20px; text-align: center; }
-        footer { background: #062631; color: white; padding: 20px; text-align: center; margin-top: 50px; }
-        footer a { color: #5dade2; text-decoration: none; }
+        .error-message { 
+            color: red; 
+            font-size: 0.85rem; 
+            margin-top: 5px; 
+        }
     </style>
 </head>
 <body>
-    <!-- HEADER - DO NOT CHANGE STRUCTURE -->
     <header>
     <div class="header-container">
         <div class="logo">
@@ -242,7 +288,7 @@
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="splash.html">Splash</a></li>
                 <li><a href="ais.html">Impact Simulator</a></li>
-                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="feedback.html" class="active">Feedback</a></li>
                 <li><a href="team.html">Team</a></li>
                 <li><a href="profile.html">Profile</a></li>
                 <li><a href="sitemap.html">Sitemap</a></li>
@@ -260,7 +306,7 @@
             
             <div class="programs-header">
                 
-                <p style="margin: 0; color: #555;"><strong> 4 volunteer programs found </strong></p>
+                <p style="margin: 0; color: #555;"><strong> 4 volunteer programs  </strong></p>
                 
                 <div style="display: flex; gap: 15px; align-items: center;">
                     
@@ -283,7 +329,7 @@
             <div class="scroll-container" id="programs-scroll">
                 
                 <div class="program-card">
-                    <img src="CoastalBeachCleanup.jpg"alt="Volunteers cleaning beach" class="program-img">
+                    <img src="CoastalBeachCleanup.jpg" alt="Volunteers cleaning beach" class="program-img">
                     
                     <div class="program-info">
                         <h3>Coastal Beach Cleanup</h3>
@@ -553,7 +599,6 @@
         });
     </script>
 
-    <!-- FOOTER - UPDATE WITH YOUR LINKS -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -579,18 +624,15 @@
             </div>
             <div class="footer-section">
                 <h3>Contact</h3>
-                <!-- Add your westminster mail here -->
-                <p>Email: info@bluefuture.org</p>
+                <p>Email: <a href= "mailto:w2181745@wetminster.ac.uk">w2181745@wetminster.ac.uk</a></p>
                 <p>© 2026 BlueFuture Team</p>
             </div>
             <div class="footer-section">
-                <h3>Student 01</h3> <!-- Add your role number here -->
-                <!-- Add your name here -->
-                <p>Name: </p>
-                <!-- Add your St ID here -->
-                <p>Student ID:</p>
-                <p>Content Page:</p><!--Add your content title-->
-                <p>Role:</p><!-- Add your work here -->
+                <h3>Student 03</h3> 
+                <p>Name:Janith Rodrigo </p>
+                <p>Student ID:20250394 / w2181745</p>
+                <p>Content Page: Feedback page</p>
+                <p>Role:Feedback</p>
 
             </div>
         </div>

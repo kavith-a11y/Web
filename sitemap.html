@@ -6,14 +6,62 @@
     <title>BlueFuture - Sitemap</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .svg-wrap { background: white; padding: 20px; border-radius: 10px; overflow-x: auto; }
-        .svg-wrap svg { width: 100%; height: auto; }
+       
+        .background-1 {
+            position: relative; 
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #1e4d6b;
+            overflow: hidden; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1; 
+        }
+
+        
+        .background-2 {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+  
+            background: 
+                url('profilebg.jpg') no-repeat center center / cover,
+                linear-gradient(135deg, #0a1f2e, #504e52);
+            background-blend-mode: overlay; 
+            filter: blur(2px);
+            z-index: -1; 
+            transform: scale(1.1); 
+        }
+
+        svg text {
+            font-family: Arial, sans-serif;
+            fill: rgb(255, 255, 255);
+            font-size: 14px;
+            font-weight: bold;
+        }
+
         .node rect { cursor: pointer; transition: fill 0.2s; }
-        .node:hover rect { fill: #5dade2; }
-        .node text { fill: white; font-size: 12px; pointer-events: none; }
-        .legend { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 20px; }
-        .legend-item { display: flex; align-items: center; gap: 6px; font-size: 14px; }
-        .lbox { width: 16px; height: 16px; border-radius: 3px; }
+        .node:hover rect { fill: #3393c4; }
+
+        .no-click { pointer-events: none; }
+
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 16px;
+            font-size: 16px;
+            color: rgb(0, 0, 0);
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
@@ -43,160 +91,78 @@
 </header>
 
 <main style="padding: 30px 5%;">
-
     <h2>Website Sitemap</h2>
-    <p>Click any box to go to that page.</p>
-    <br>
+    <p>Tap a box to open the page</p>
 
-    <div class="svg-wrap">
-        <svg viewBox="0 0 800 380" xmlns="http://www.w3.org/2000/svg">
+    <div class="background-1">
+        
+        <div class="background-2"></div>
 
-            <!-- Lines connecting the boxes -->
-            <!-- Splash to Home -->
-            <line x1="150" y1="40" x2="340" y2="40" stroke="#aaa" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <svg width="950" height="500" xmlns="http://www.w3.org/2000/svg">
+            <line x1="140" y1="30" x2="325" y2="30" stroke="#4a9aba" stroke-width="2" stroke-dasharray="5,3"/>
+            <line x1="405" y1="50" x2="405" y2="75" stroke="#4a9aba" stroke-width="2"/>
+            <line x1="65" y1="75" x2="880" y2="75" stroke="#4a9aba" stroke-width="2"/>
+            <line x1="65"  y1="75" x2="65"  y2="85" stroke="#4a9aba" stroke-width="2"/>
+            <line x1="180" y1="75" x2="180" y2="85" stroke="#4a9aba" stroke-width="2"/>
+            <line x1="300" y1="75" x2="300" y2="85" stroke="#4a9aba" stroke-width="2"/>
+            <line x1="410" y1="75" x2="410" y2="85" stroke="#4a9aba" stroke-width="2"/>
+            <line x1="520" y1="75" x2="520" y2="85" stroke="#4a9aba" stroke-width="2"/>
+            <line x1="635" y1="75" x2="635" y2="85" stroke="#4a9aba" stroke-width="2"/>
+            <line x1="880" y1="75" x2="880" y2="85" stroke="#4a9aba" stroke-width="2"/>
+            <line x1="65" y1="125" x2="65" y2="150" stroke="#6dbcd4" stroke-width="1.5"/>
+            <line x1="25" y1="150" x2="370" y2="150" stroke="#6dbcd4" stroke-width="1.5"/>
+            <line x1="740" y1="75" x2="740" y2="150" stroke="#6dbcd4" stroke-width="2"/>
+            <line x1="580" y1="150" x2="900" y2="150" stroke="#6dbcd4" stroke-width="2"/>
+            <line x1="580" y1="150" x2="580" y2="380" stroke="#6dbcd4" stroke-width="1.5"/>
+            <line x1="900" y1="150" x2="900" y2="380" stroke="#6dbcd4" stroke-width="1.5"/>
+            <line x1="45"  y1="150" x2="45"  y2="165" stroke="#6dbcd4" stroke-width="1.5"/>
+            <line x1="135" y1="150" x2="135" y2="165" stroke="#6dbcd4" stroke-width="1.5"/>
+            <line x1="235" y1="150" x2="235" y2="165" stroke="#6dbcd4" stroke-width="1.5"/>
+            <line x1="335" y1="150" x2="335" y2="165" stroke="#6dbcd4" stroke-width="1.5"/>
 
-            <!-- Home down -->
-            <line x1="400" y1="60" x2="400" y2="100" stroke="#999" stroke-width="2"/>
-            <!-- Horizontal bar -->
-            <line x1="60" y1="100" x2="740" y2="100" stroke="#999" stroke-width="1.5"/>
-            <!-- Drops to each page -->
-            <line x1="60"  y1="100" x2="60"  y2="120" stroke="#999" stroke-width="1.5"/>
-            <line x1="160" y1="100" x2="160" y2="120" stroke="#999" stroke-width="1.5"/>
-            <line x1="270" y1="100" x2="270" y2="120" stroke="#999" stroke-width="1.5"/>
-            <line x1="380" y1="100" x2="380" y2="120" stroke="#999" stroke-width="1.5"/>
-            <line x1="490" y1="100" x2="490" y2="120" stroke="#999" stroke-width="1.5"/>
-            <line x1="600" y1="100" x2="600" y2="120" stroke="#999" stroke-width="1.5"/>
-            <line x1="740" y1="100" x2="740" y2="120" stroke="#999" stroke-width="1.5"/>
-
-            <!-- Profile down to sub-pages -->
-            <line x1="600" y1="160" x2="600" y2="220" stroke="#bbb" stroke-width="1.2"/>
-            <line x1="540" y1="220" x2="680" y2="220" stroke="#bbb" stroke-width="1.2"/>
-            <line x1="540" y1="220" x2="540" y2="240" stroke="#bbb" stroke-width="1.2"/>
-            <line x1="680" y1="220" x2="680" y2="240" stroke="#bbb" stroke-width="1.2"/>
-
-            <!-- Content down to sub-pages (moved from Gallery to Content) -->
-            <line x1="60" y1="160" x2="60" y2="220" stroke="#bbb" stroke-width="1.2"/>
-            <line x1="40"  y1="220" x2="370" y2="220" stroke="#bbb" stroke-width="1.2"/>
-            <line x1="40"  y1="220" x2="40"  y2="240" stroke="#bbb" stroke-width="1.2"/>
-            <line x1="140" y1="220" x2="140" y2="240" stroke="#bbb" stroke-width="1.2"/>
-            <line x1="260" y1="220" x2="260" y2="240" stroke="#bbb" stroke-width="1.2"/>
-            <line x1="370" y1="220" x2="370" y2="240" stroke="#bbb" stroke-width="1.2"/>
-
-
-            <!-- SPLASH -->
-            <a href="splash.html" class="node" tabindex="0">
-                <title>Splash Screen</title>
-                <rect x="20" y="22" width="130" height="36" rx="6" fill="#1a5276" stroke="#0e3460" stroke-width="1.5"/>
-                <text x="85" y="36" text-anchor="middle">Splash Screen</text>
-                <text x="85" y="51" text-anchor="middle" font-size="10">Entry Point</text>
+            <a href="splash.html" class="node">
+                <rect x="10" y="5" width="130" height="45" rx="5" fill="#1a5276" stroke="#2e86c1"/>
+                <text x="75" y="33" text-anchor="middle">Splash Screen</text>
             </a>
-
-            <!-- HOME -->
-            <a href="home.html" class="node" tabindex="0">
-                <title>Home Page</title>
-                <rect x="340" y="22" width="120" height="36" rx="6" fill="#2c7a7b" stroke="#1f5b5d" stroke-width="1.5"/>
-                <text x="400" y="36" text-anchor="middle">Home</text>
-                <text x="400" y="51" text-anchor="middle" font-size="10">Hub</text>
+            <a href="home.html" class="node">
+                <rect x="325" y="5" width="160" height="45" rx="5" fill="#1a6b6c" stroke="#2e9e9e"/>
+                <text x="405" y="33" text-anchor="middle">Home — Hub</text>
             </a>
-
-            <!-- MAIN PAGES ROW -->
-            <a href="content.html" class="node" tabindex="0">
-                <title>Content </title>
-                <rect x="15"  y="120" width="90" height="38" rx="5" fill="#117a65" stroke="#0e5b4d" stroke-width="1.5"/>
-                <text x="60"  y="134" text-anchor="middle" font-size="11">Content</text>
-                <text x="60"  y="150" text-anchor="middle" font-size="10">Page</text>
-            </a>
-
-            <a href="gallery.html" class="node" tabindex="0">
-                <title>Gallery</title>
-                <rect x="110" y="120" width="100" height="38" rx="5" fill="#117a65" stroke="#0e5b4d" stroke-width="1.5"/>
-                <text x="160" y="134" text-anchor="middle">Gallery</text>
-                <text x="160" y="150" text-anchor="middle" font-size="10">Student 1</text>
-            </a>
-
-            <a href="ais.html" class="node" tabindex="0">
-                <title>Impact Simulator</title>
-                <rect x="215" y="120" width="110" height="38" rx="5" fill="#117a65" stroke="#0e5b4d" stroke-width="1.5"/>
-                <text x="270" y="134" text-anchor="middle">Impact Sim</text>
-                <text x="270" y="150" text-anchor="middle" font-size="10">Student 2</text>
-            </a>
-
-            <a href="feedback.html" class="node" tabindex="0">
-                <title>Feedback</title>
-                <rect x="330" y="120" width="100" height="38" rx="5" fill="#117a65" stroke="#0e5b4d" stroke-width="1.5"/>
-                <text x="380" y="134" text-anchor="middle">Feedback</text>
-                <text x="380" y="150" text-anchor="middle" font-size="10">Student 3</text>
-            </a>
-
-            <a href="team.html" class="node" tabindex="0">
-                <title>Team</title>
-                <rect x="435" y="120" width="110" height="38" rx="5" fill="#117a65" stroke="#0e5b4d" stroke-width="1.5"/>
-                <text x="490" y="134" text-anchor="middle">Team</text>
-                <text x="490" y="150" text-anchor="middle" font-size="10">Student 3</text>
-            </a>
-
-            <a href="profile.html" class="node" tabindex="0">
-                <title>User Profile</title>
-                <rect x="550" y="120" width="100" height="38" rx="5" fill="#117a65" stroke="#0e5b4d" stroke-width="1.5"/>
-                <text x="600" y="134" text-anchor="middle">Profile</text>
-                <text x="600" y="150" text-anchor="middle" font-size="10">Student 4</text>
-            </a>
-
-            <a href="sitemap.html" class="node" tabindex="0">
-                <title>Sitemap - current page</title>
-                <rect x="695" y="120" width="90" height="38" rx="5" fill="#27ae60" stroke="#1e8449" stroke-width="2"/>
-                <text x="740" y="134" text-anchor="middle">Sitemap</text>
-                <text x="740" y="150" text-anchor="middle" font-size="10">★ Here</text>
-            </a>
-
-
-            <!-- CONTENT SUB-PAGES (under Content page - moved from Gallery) -->
-            <a href="content_ST1.html" class="node" tabindex="0">
-                <title>Content ST1</title>
-                <rect x="5"   y="240" width="80" height="30" rx="4" fill="#7f8c8d" stroke="#555"/>
-                <text x="45"  y="260" text-anchor="middle" font-size="10">ST1</text>
-            </a>
-            <a href="content_ST2.html" class="node" tabindex="0">
-                <title>Content ST2</title>
-                <rect x="100" y="240" width="80" height="30" rx="4" fill="#7f8c8d" stroke="#555"/>
-                <text x="140" y="260" text-anchor="middle" font-size="10">ST2</text>
-            </a>
-            <a href="content_ST3.html" class="node" tabindex="0">
-                <title>Content ST3</title>
-                <rect x="215" y="240" width="80" height="30" rx="4" fill="#7f8c8d" stroke="#555"/>
-                <text x="255" y="260" text-anchor="middle" font-size="10">ST3</text>
-            </a>
-            <a href="content_ST4.html" class="node" tabindex="0">
-                <title>Content ST4</title>
-                <rect x="330" y="240" width="80" height="30" rx="4" fill="#7f8c8d" stroke="#555"/>
-                <text x="370" y="260" text-anchor="middle" font-size="10">ST4</text>
-            </a>
-
-            <!-- PAGE EDITOR & VALIDATION (under Profile) -->
-            <a href="pageEditor_ST4.html" class="node" tabindex="0">
-                <title>Page Editor ST4</title>
-                <rect x="490" y="240" width="100" height="30" rx="4" fill="#8e44ad" stroke="#6c3483"/>
-                <text x="540" y="260" text-anchor="middle" font-size="10">Page Editor</text>
-            </a>
-            <a href="validation_ST4.html" class="node" tabindex="0">
-                <title>Validation ST4</title>
-                <rect x="630" y="240" width="100" height="30" rx="4" fill="#8e44ad" stroke="#6c3483"/>
-                <text x="680" y="260" text-anchor="middle" font-size="10">Validation</text>
-            </a>
-
+            <rect x="10"  y="85" width="110" height="40" rx="4" fill="#117a65" stroke="#1abc9c"/>
+            <text x="65"  y="110" text-anchor="middle">Content</text>
+            <a href="gallery.html" class="node"><rect x="125" y="85" width="110" height="40" rx="4" fill="#117a65"/><text x="180" y="110" text-anchor="middle">Gallery</text></a>
+            <a href="ais.html" class="node"><rect x="240" y="85" width="120" height="40" rx="4" fill="#117a65"/><text x="300" y="110" text-anchor="middle">Impact Sim</text></a>
+            <a href="feedback.html" class="node"><rect x="365" y="85" width="100" height="40" rx="4" fill="#117a65"/><text x="415" y="110" text-anchor="middle">Feedback</text></a>
+            <a href="team.html" class="node"><rect x="470" y="85" width="100" height="40" rx="4" fill="#117a65"/><text x="520" y="110" text-anchor="middle">Team</text></a>
+            <a href="profile.html" class="node"><rect x="580" y="85" width="110" height="40" rx="4" fill="#117a65"/><text x="635" y="110" text-anchor="middle">Profile</text></a>
+            <a href="sitemap.html" class="node"><rect x="820" y="85" width="120" height="40" rx="4" fill="#1e8449" stroke="#27ae60" stroke-width="2"/><text x="880" y="110" text-anchor="middle">Sitemap </text></a>
+            <a href="content_ST1.html" class="node"><rect x="5"   y="165" width="80" height="35" rx="3" fill="#566573"/><text x="45"  y="188" text-anchor="middle">ST 1</text></a>
+            <a href="content_ST2.html" class="node"><rect x="95"  y="165" width="80" height="35" rx="3" fill="#566573"/><text x="135" y="188" text-anchor="middle">ST 2</text></a>
+            <a href="content_ST3.html" class="node"><rect x="195" y="165" width="80" height="35" rx="3" fill="#566573"/><text x="235" y="188" text-anchor="middle">ST 3</text></a>
+            <a href="content_ST4.html" class="node"><rect x="295" y="165" width="80" height="35" rx="3" fill="#566573"/><text x="335" y="188" text-anchor="middle">ST 4</text></a>
+            <g class="no-click">
+                <rect x="520" y="165" width="120" height="35" rx="3" fill="#7d3c98"/><text x="580" y="188" text-anchor="middle">Page Editor</text>
+                <rect x="840" y="165" width="120" height="35" rx="3" fill="#7d3c98"/><text x="900" y="188" text-anchor="middle">Validation</text>
+            </g>
+            <a href="pageEditor_ST1.html" class="node"><rect x="520" y="210" width="120" height="35" rx="3" fill="#566573"/><text x="580" y="233" text-anchor="middle">ST 1</text></a>
+            <a href="pageEditor_ST2.html" class="node"><rect x="520" y="255" width="120" height="35" rx="3" fill="#566573"/><text x="580" y="278" text-anchor="middle">ST 2</text></a>
+            <a href="pageEditor_ST3.html" class="node"><rect x="520" y="300" width="120" height="35" rx="3" fill="#566573"/><text x="580" y="323" text-anchor="middle">ST 3</text></a>
+            <a href="pageEditor_ST4.html" class="node"><rect x="520" y="345" width="120" height="35" rx="3" fill="#566573"/><text x="580" y="368" text-anchor="middle">ST 4</text></a>
+            <a href="validation_ST1.html" class="node"><rect x="840" y="210" width="120" height="35" rx="3" fill="#566573"/><text x="900" y="233" text-anchor="middle">ST 1</text></a>
+            <a href="validation_ST2.html" class="node"><rect x="840" y="255" width="120" height="35" rx="3" fill="#566573"/><text x="900" y="278" text-anchor="middle">ST 2</text></a>
+            <a href="validation_ST3.html" class="node"><rect x="840" y="300" width="120" height="35" rx="3" fill="#566573"/><text x="900" y="323" text-anchor="middle">ST 3</text></a>
+            <a href="validation_ST4.html" class="node"><rect x="840" y="345" width="120" height="35" rx="3" fill="#566573"/><text x="900" y="368" text-anchor="middle">ST 4</text></a>
         </svg>
     </div>
 
-    <!-- Legend -->
     <div class="legend">
-        <div class="legend-item"><div class="lbox" style="background:#1a5276;"></div> Splash</div>
-        <div class="legend-item"><div class="lbox" style="background:#2c7a7b;"></div> Home</div>
-        <div class="legend-item"><div class="lbox" style="background:#117a65;"></div> Main Pages</div>
-        <div class="legend-item"><div class="lbox" style="background:#27ae60;"></div> Current Page</div>
-        <div class="legend-item"><div class="lbox" style="background:#7f8c8d;"></div> Content Pages</div>
-        <div class="legend-item"><div class="lbox" style="background:#8e44ad;"></div> Editor / Validation</div>
+        <span><i class="dot" style="background:#1a5276;"></i> Splash</span>
+        <span><i class="dot" style="background:#1a6b6c;"></i> Home</span>
+        <span><i class="dot" style="background:#117a65;"></i> Main Pages</span>
+        <span><i class="dot" style="background:#1e8449;"></i> Current Page</span>
+        <span><i class="dot" style="background:#566573;"></i> Content Pages</span>
+        <span><i class="dot" style="background:#7d3c98;"></i> Editor / Validation</span>
     </div>
-
 </main>
 
 <footer>
@@ -204,6 +170,7 @@
         <div class="footer-section">
             <h3>BlueFuture</h3>
             <p>Working towards SDG 14: Life Below Water</p>
+            <p>Conserve and sustainably use the oceans, seas and marine resources</p>
         </div>
         <div class="footer-section">
             <h3>Quick Links</h3>
@@ -212,20 +179,22 @@
         </div>
         <div class="footer-section">
             <h3>Accessibility Statement</h3>
-            <p>Semantic HTML structure used</p>
-            <p>All images have alt text</p>
+            <p>Use of semantic HTML structure</p>
+            <p>All images include alternative text</p>
+            <p>Readable fonts and clear colour contrast</p>
+            <p>Simple and consistent navigation</p>
             <p>Keyboard-friendly navigation</p>
         </div>
         <div class="footer-section">
             <h3>Contact</h3>
-            <p>Email: info@bluefuture.org</p>
+            <p>Email: <a href="mailto:w2182537@westminster.ac.uk">w2182537@westminster.ac.uk</a></p>
             <p>© 2026 BlueFuture Team</p>
         </div>
         <div class="footer-section">
             <h3>Student 04</h3>
             <p>Name: Hivin Nisalitha</p>
-            <p>Student ID: 20240984</p>
-            <p>Pages: User Profile, Sitemap</p>
+            <p>Student ID: 20240984 / W2182537</p>
+            <p>Role: Sitemap</p>
         </div>
     </div>
     <div class="footer-bottom">

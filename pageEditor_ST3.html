@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Editor Student - Janith Rodrigo </title>
+
+    <link rel="stylesheet" href="css/pageEditor_validator.css"> <!-- External CSS link -->
+
+</head>
+<body>
+    
+    <!-- Update the header and the footer to be consistent with the rest of the pages you implemented -->
+
+    <header id="top">
+        <h1>Blue Future</h1>
+    </header>
+
+    <section class="stud">
+        <h2>Student name : Janith Rodrigo, team name : Blue Future, student role : 03</h2>
+    </section>
+
+    <div class="container">
+        <!-- Main content area -->
+        <main>
+
+            <section>
+                <h2 id="team">team page</h2>
+                    <h3>Technical Description</h3>
+                        <p>The Team pages implementation pairs semantic HTML with modern CSS to create an accessible, responsive, and interactive experience entirely without JavaScript. Logically, the layout is organized using a dedicated <section> and clear heading hierarchy. Accessibility is strictly maintained by adding tabindex="0" to the profile cards for keyboard navigation and descriptive alt text to images for screen readers.For styling, CSS Flexbox builds a fluid, responsive grid that automatically wraps on smaller screens, removing the need for complex media queries. The dynamic animations leverage precise CSS positioning and transitions. Cards combine position: relative with overflow: hidden to act as clipping masks, while the hidden text pane uses position: absolute. Upon hover or focus, CSS transitions seamlessly trigger a 3D card lift (transform: translateY) alongside a smooth max-height slide-up animation for the text overlay. This approach ensures high-quality, 60fps visual feedback that feels deeply satisfying and professional.</p> 
+                    
+                    <h3>Accessibility</h3>
+                        <p>Ensuring the Team page is fully accessible to all users was a primary focus of the development process. To achieve this, several key web accessibility techniques were implemented. First, keyboard navigation was enabled by adding the tabindex="0" attribute to every profile card. This allows users who rely on keyboards instead of a mouse to navigate sequentially through the developer profiles. To complement this, the CSS :focus pseudo-class was paired with the :hover state. When a user tabs onto a card, it triggers the exact same interactive 3D lift and slide-up text animation, ensuring critical information is never hidden from non-mouse users. Furthermore, the page utilizes strict semantic HTML, including a dedicated <section> tag and a logical heading hierarchy, helping screen readers correctly parse the layout. Finally, every portrait image includes a highly descriptive alt attribute, providing visually impaired users with accurate context for all visual elements.</p>
+                    
+                    <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
+                        <p><a href="validation_ST03.html">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+
+                    <h3>Link to the page</h3>
+                        <p><a href="team.html">Include a link to the actual page you describe.</a></p>
+            </section>
+
+            <section>
+                <h2 id="Feedback">Feedback Page</h2>
+                    <h3>Technical Description</h3>
+                        <p>The Feedback pages implementation prioritizes accessible data collection and a responsive interface without relying on JavaScript. Semantically, the form utilizes <fieldset> and <legend> tags to logically group questions, providing essential context for screen readers. Accessibility is further enhanced by explicitly linking <label> elements to their inputs using the for attribute, significantly enlarging clickable target areas. Data integrity is maintained through native HTML5 validation attributes like required and type="email", which handle user errors instantly.Stylistically, CSS Flexbox establishes a fluid, single-column layout (flex-direction: column), ensuring inputs scale perfectly across all devices. To conserve vertical screen space, a custom horizontal-scrolling container (overflow-x: auto) with a hidden scrollbar was implemented for the specific rating section. Finally, interactive CSS pseudo-classes (:focus and :hover) provide immediate visual feedback when users click input fields or hover over buttons, ensuring an intuitive and frictionless user experience.</p>
+
+                    <h3>Accessibility</h3>
+                        <p>The Content pages implementation focuses on document hierarchy and high readability for long-form educational text. Semantically, the page is organized using the <main> tag and divided into distinct <section> elements, each identified by a unique id. This structure allows for a functional internal navigation menu (<nav>) where anchor links enable users to jump directly to specific topics. Strict adherence to a logical heading hierarchy ensures the information is accessible to screen readers and easy to scan visually. Stylistically, CSS scroll-behavior: smooth is applied to the root element to provide a polished navigation experience. Readability is prioritized through relative $rem$ units for typography and a generous 1.6 line-height, while a "Go to Top" button uses position: fixed to provide a persistent exit </p>
+
+                    <h3>Link to the validation page</h3> 
+                        <p><a href="validation_ST03.html">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+
+                        
+                    <h3>Link to the page</h3>
+                        <p><a href="feedback.html">Include a link to the actual page you describe.</a></p>
+            </section>
+
+            <section>
+                <h2 id="content">Content Page</h2>
+                    <h3>Technical Description</h3>
+                        <p>The Content pages implementation focuses on document hierarchy and high readability for long-form educational text. Semantically, the page is organized using the <main> tag and divided into distinct <section> elements, each identified by a unique id. This structure allows for a functional internal navigation menu (<nav>) where anchor links enable users to jump directly to specific topics. Strict adherence to a logical heading hierarchy (<h1> to <h3>) ensures the information is accessible to screen readers and easy to scan visually.Stylistically, CSS scroll-behavior: smooth is applied to the root element to provide a polished, non-jarring navigation experience between sections. Readability is prioritized through relative rem units for typography and a generous line-height, ensuring the text scales and breathes across all devices. Finally, a "Go to Top" button uses position: fixed to provide a persistent, one-click exit strategy from the deep-scroll content.</p>
+
+                    <h3>Accessibility</h3>
+                        <p>Ensuring the Content page remains fully accessible was a primary focus due to the high volume of educational text. The implementation prioritizes clear document structure and flexible typography to support users with visual or motor impairments. The page strictly follows a logical H1, H2, H3 structure, allowing screen reader users to generate an accurate "mental map" and navigate sub-topics efficiently. All font sizes are defined using $rem$ units instead of pixels, ensuring text scales proportionally if a user adjusts their browser settings. Additionally, the Table of Contents uses anchor links tied to section IDs, allowing keyboard users to "skip" to relevant info. Finally, a $1.6$ line-height and high-contrast colors ensure legibility for users with low vision.</p>
+
+                    <h3>Link to the validation page</h3> 
+                        <p><a href="validation_ST03.html">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+
+                        
+                    <h3>Link to the page</h3>
+                        <p><a href="content.html">Include a link to the actual page you describe.</a></p>
+            </section>
+
+            <section>
+                <h2 id="challenge"> Challenges and Lessons Learned</h2>
+                    <p>mplementing high-end interactivity using only CSS presented significant technical challenges. A primary hurdle was engineering the "slide-up" member details on the Team page without JavaScript, which required precise coordination of absolute positioning and max-height transitions to achieve fluid, 60fps animations. Additionally, ensuring the Feedback page remained responsive across all devices while implementing a custom horizontal-scrolling interface required a deep understanding of Flexbox and overflow properties.Through this process, I learned that modern CSS attributes like scroll-behavior: smooth can replace complex scripts for polished navigation. The W3C validation process was a vital lesson, catching syntax errors and heading hierarchy issues that ensured cross-browser compatibility. Ultimately, I realized that integrating accessibility features like tabindex and semantic landmarks from the start results in a more robust, professional, and user-centric website that serves all visitors effectively.</p>
+                    </section>
+
+            <section>
+                <h2 id="compliance"> Compliance</h2>
+                    <p>Developing the Team, Feedback, and Content pages presented significant technical challenges, primarily because high-level interactivity and complex layouts had to be achieved without relying on JavaScript. A major hurdle was engineering the interactive "slide-up" member details and 3D hover effects on the Team page. I resolved this by meticulously coordinating absolute positioning and max-height CSS transitions, ensuring fluid animations that did not disrupt the surrounding grid. Similarly, creating a fully responsive layout for the Feedback page required a deep dive into CSS Flexbox. I successfully implemented a custom horizontal-scrolling rating interface with hidden scrollbars, accommodating mobile touch-users while remaining visually cohesive on widescreen desktop monitors. Reflecting on this process, a vital lesson learned was the sheer capability of modern CSS. Properties like scroll-behavior: smooth completely replaced the need for complex scripts to handle internal navigation on long-form content. Furthermore, addressing early W3C validation errors taught me the critical importance of maintaining a strict heading hierarchy and clean syntax to guarantee cross-browser compatibility. Ultimately, integrating core accessibility features—such as semantic landmarks, tabindex, and explicit form labels—from the very beginning proved that accessible design inherently creates a more robust, professional, and user-centric website for every visitor.
+                        <a href="https://intranet.ecs.westminster.ac.uk/modules/4COSC011W/compliance.html" target="_blank">See the lecture notes for more details on compliance.</a></p> 
+
+                    
+            </section>
+
+            <section>
+                <h2 id="compliance"> Group Meetings and Individual Contribution Log</h2>
+                    <p>Include a Group Meetings and Contribution Log that documents your engagement with group work.</p> 
+                    Requirements:
+                        <ul> 
+                            <li>A minimum of six (6) group meetings must be recorded.</li>
+                            <li>Each student must provide their own account of the meetings.</li>
+                            <li>The log must focus on individual contribution, not just group activity.</li>
+                        </ul>
+                        <p>Feel free to follow the example table structure below:</p>
+
+                        <table >
+    
+                            <thead>
+                                <tr>
+                                    <th colspan="6">Group Meetings and Contribution Log</th>
+                                </tr>
+                                <tr>
+                                    <th>Meeting</th>
+                                    <th>Date &amp; Time</th>
+                                    <th>Format</th>
+                                    <th>Objective</th>
+                                    <th>Attended</th>
+                                    <th>Your Individual Contribution</th>
+                                </tr>
+                            </thead>
+                        
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>3 Feb 2026</td>
+                                    <td>Face-to-face</td>
+                                    <td>Agree SDG and assign roles</td>
+                                    <td>Yes</td>
+                                    <td>I agreed to take responsibility for the Home Page and template.</td>
+                                </tr>
+                        
+                                <tr>
+                                    <td>2</td>
+                                    <td>17 Feb 2026</td>
+                                    <td>Online</td>
+                                    <td>Review Home Page design</td>
+                                    <td>Yes</td>
+                                    <td>I suggested the colour palette and card-based layout.</td>
+                                </tr>
+                        
+                                <tr>
+                                    <td>3</td>
+                                    <td>03 Mar 2026</td>
+                                    <td>Hybrid</td>
+                                    <td>Progress review</td>
+                                    <td>No</td>
+                                    <td>I reviewed meeting notes and followed up with tasks.</td>
+                                </tr>
+                        
+                                <tr>
+                                    <td>4</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                        
+                                <tr>
+                                    <td>5</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                        
+                                <tr>
+                                    <td>6</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                        
+                            </tbody>
+                        
+                        </table>
+                    
+            </section>
+
+            <section>
+                <h2 id="ref">References</h2>
+                <p>Provide links to resources you used following a consistent format (e.g., APA, MLA, or a simplified style). For example:<br><br>
+                    <ul class="ref">
+                        <li>iStock (2025) <i>iStock.</i> Available at: <a href="#">https://www.istockphoto.com/</a> (Last accessed: 11 Feb 2025).</li>
+                        <li>Duckett, J., 2011. HTML and CSS: Design and Build Websites,<i>John Willey&Sons. Inc. Indianappolis.</i></li>
+                    </ul>
+            </section>
+
+            <p class="top"><a href="#top">Go top</a></p>
+        </main>
+
+        <!-- Sidebar area -->
+        <aside>
+            <h3>Core pages developed:</h3>
+
+        <!-- Customize this to the role you undertook. Keep only the list items you were responsible to develop, delete the rest -->
+            <ul class="top-level-ul">
+                <!-- Keep only the list items you were responsible to develop, delete the rest and update the links to the corresponding markers -->
+                <li>Student 1</li>
+                <ul>
+                        <li><a href="#home">Home page </a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#content">Content</a></li>
+                    </ul>
+                <li>Student 2</li>
+                <ul> 
+                    <li><a href="#">Splash Screen</a></li>
+                    <li><a href="#">Action Impact Simulator</a></li>
+                    <li><a href="#">Content</a></li>
+                </ul>
+                    
+                <li>Student 3</li>
+                    <ul>
+                        <li><a href="#">Feedback</a> </li>
+                        <li><a href="#">Team</a></li>
+                        <li><a href="#">Content</a></li>
+                    </ul>
+                <li>Student 4</li>
+                    <ul>
+                        <li><a href="#">User Profile </a></li>
+                        <li><a href="#">Sitemap</a></li>
+                        <li><a href="#">Content</a></li>
+                    </ul>
+                <li><a href="#challenge">Challenges and Lessons Learned</a></li>
+                <li><a href="#compliance">Compliance</a></li>
+                <li><a href="#group">Group Meetings and Individual Contribution Log</a></li>
+                <li><a href="#ref">References</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer>
+        <p>Replace this footer with your teams' website footer</p>
+    </footer>
+</body>
+</html>

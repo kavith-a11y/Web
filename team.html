@@ -4,22 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BlueFuture - Life Below Water</title>
-    <!-- GLOBAL CSS - DO NOT CHANGE -->
-    <link rel="stylesheet" href="style.css">
-    <!-- Page specific CSS will go here -->
+    
+    <link rel="stylesheet" href="style.css">  <!-- GLOBAL CSS - DO NOT CHANGE -->
+    
     <style>
         body { 
             font-family: Arial, sans-serif; 
             line-height: 1.6; 
-            background-color: #093a4a; /* Dark Ocean Background */
-            color: #0d1b2a;            /* Dark Navy Text */
-            margin: 0;
+            background-color: #f0f8ff; 
+            color: #0d1b2a;            
             padding: 0;
         }
 
-        /* =========================================
-           TEAM PAGE STYLES (PREVIOUS FLOATING STYLE)
-           ========================================= */
         #team-section {
             background-color: transparent; 
             box-shadow: none;
@@ -30,18 +26,29 @@
         }
 
         #team-section .section-title {
+           border-radius: 30px;        /* Creates perfect pill-shaped rounded corners */
+            padding: 10px 40px;         /* Adds space above/below (10px) and left/right (40px) of the text */
+            width: fit-content;         /* Shrinks the background box to perfectly wrap the text */
+            margin: 0 auto 15px auto;
+            background-color: #1e8bc3;
             border-bottom: none;
             color: #ffffff; 
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 2.5rem; /* 1rem = 16px. */
             margin-bottom: 5px;
+        }
+        
+        .nav-menu a.active { 
+            color: #cff9f9; 
+             
         }
 
         #team-section .section-subtitle { 
-            color: #5dade2; /* Light Sky Blue */
+            
+            color: #5dade2; 
             text-align: center;
             margin-bottom: 40px;
-            font-size: 1.1rem;
+            font-size: 1.1rem; /* 1rem = 16px. */
         }
 
         .team-grid {
@@ -51,13 +58,12 @@
             flex-wrap: wrap;
         }
 
-        /* Tall, sleek portrait cards */
         .team-card {
             width: 240px; 
             background-color: #ffffff; 
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); 
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);   /* Horizontal Offset, Vertical Offset, Blur Radius, Color & Opacity */
             position: relative;
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -66,8 +72,8 @@
         /* Hover & Keyboard Accessibility */
         .team-card:hover, .team-card:focus {
             transform: translateY(-10px); 
-            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6); 
-            outline: 4px solid #1e8bc3; /* Bright Sea Blue focus ring */
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);   /* Horizontal Offset, Vertical Offset, Blur Radius, Color & Opacity */
+            outline: 4px solid #1e8bc3; /* focus ring */
         }
 
         .image-area { 
@@ -87,13 +93,13 @@
             transform: scale(1.1); 
         }
 
-        /* REQUIRED: Expanding Details Box (Slides up on hover) */
+        /*  Expanding Details Box- Slides up on hover */
         .expandable-details {
             position: absolute; 
             bottom: 0; left: 0; width: 100%; 
             max-height: 0; 
-            background-color: rgba(9, 58, 74, 0.95); /* Dark transparent blue */
-            color: #f0f8ff; /* Pale Water Blue */
+            background-color: rgba(9, 58, 74, 0.95);
+            color: #f0f8ff;
             overflow: hidden;
             transition: max-height 0.4s ease, padding 0.4s ease;
             box-sizing: border-box;
@@ -107,71 +113,64 @@
         }
 
         .expandable-details h3 { 
-            color: #5dade2; /* Light Sky Blue */
+            color: #5dade2; 
             margin: 0 0 10px 0; 
-            font-size: 1.3rem; 
+            font-size: 1.3rem; /* 1rem = 16px. */
         }
 
         .expandable-details p { 
             margin: 5px 0; 
-            font-size: 0.85rem; 
+            font-size: 0.85rem; /* 1rem = 16px. */
             line-height: 1.5; 
             text-align: left; 
         }
-
-        /* Placeholder Header/Footer */
-        header { background: #3B7B9A; color: white; padding: 20px; text-align: center; }
-        footer { background: #062631; color: white; padding: 20px; text-align: center; margin-top: 50px; }
-        footer a { color: #5dade2; text-decoration: none; }
         
        
     </style>
 
 </head>
 <body>
-    <!-- HEADER - DO NOT CHANGE STRUCTURE -->
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="Blue Future Logo.png" alt="BlueFuture Logo - Protecting Life Below Water">
+                <img src="logo.png" alt="BlueFuture Logo - Protecting Life Below Water">
                 <div>
-                    <h1>BlueFuture</h1>
-                    <p>Protecting Life Below Water</p>
+                    <h1> BlueFuture </h1>
+                    <p> Protecting Life Below Water </p>
                 </div>
             </div>
             <nav>
                 <ul class="nav-menu">
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="home.html">Home </a></li>
+                    <li><a href="gallery.html">Gallery </a></li>
                     <li><a href="splash.html">Splash</a></li>
                     <li><a href="ais.html">Impact Simulator</a></li>
-                    <li><a href="feedback.html">Feedback</a></li>
-                    <li><a href="team.html">Team</a></li>
+                    <li><a href="feedback.html" >Feedback </a></li>
+                    <li><a href="team.html" class="active" >Team</a></li>
                     <li><a href="profile.html">Profile</a></li>
                     <li><a href="sitemap.html">Sitemap</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-
-    <!-- MAIN CONTENT - ADD YOUR PAGE CONTENT HERE -->
-        <!-- YOUR PAGE SPECIFIC CONTENT GOES HERE -->
+        
     <main id="main-content">
 
         <section id="team-section">
-            <h2 class="section-title">Team Page</h2>
-            <p class="section-subtitle">Learn about the team! Hover over the images for details.</p>
+            <h2 class="section-title"> Team Page </h2>
+            <p class="section-subtitle"> Learn about the team! Hover over the images for details. </p>
 
             <div class="team-grid">
                 
                 <div class="team-card" tabindex="0">
                     <div class="image-area">
-                        <img src="manulanew.png" alt="Portrait of Manula" class="team-image">
+                        <img src="manula.png" alt="Portrait of Manula" class="team-image">
                         
                         <div class="expandable-details">
-                            <h3>Manula Senanayaka</h3>
+                            <h3><u>Manula Senanayaka</u></h3>
+                            <p><strong>Student No:</strong> 01</p>
                             <p><strong>Role:</strong> Implementation Lead</p>
-                            <p><strong>Pages:</strong> Home, Gallery, Content</p>
+                            <p><strong>Pages:</strong> Home, Gallery</p>
                             <p><strong>Summary:</strong> Built our ocean-themed website template and the interactive marine life image gallery.</p>
                         </div>
                     </div>
@@ -182,7 +181,8 @@
                         <img src="kawithnew.png" alt="Portrait of Kawith" class="team-image">
                         
                         <div class="expandable-details">
-                            <h3>Kawith Gethmina</h3>
+                            <h3><u>Kavith Gethmina</u></h3>
+                            <p><strong>Student No:</strong> 02</p>
                             <p><strong>Role:</strong> Interactive Developer</p>
                             <p><strong>Pages:</strong> Splash Screen, Impact Simulator</p>
                             <p><strong>Summary:</strong> Developed the animated ocean Splash Screen and the JavaScript plastic impact simulator.</p>
@@ -195,7 +195,8 @@
                         <img src="janithnew.png" alt="Portrait of Janith Rodrigo" class="team-image">
                         
                         <div class="expandable-details">
-                            <h3>Janith Rodrigo</h3>
+                            <h3><u>Janith Rodrigo</u></h3>
+                            <p><strong>Student No:</strong> 03</p>
                             <p><strong>Role:</strong> Community Lead</p>
                             <p><strong>Pages:</strong> Feedback, Team </p>
                             <p><strong>Summary:</strong> Designed the interactive volunteer directory and implemented the live JavaScript marine feedback form.</p>
@@ -208,7 +209,8 @@
                         <img src="hivin.jpeg" alt="Portrait of Hivin" class="team-image">
                         
                         <div class="expandable-details">
-                            <h3>Hivin Nialitha</h3>
+                            <h3><u>Hivin Jayawickrama</u></h3>
+                            <p><strong>Student No:</strong> 04</p>
                             <p><strong>Role:</strong> Data & Architecture</p>
                             <p><strong>Pages:</strong> User Profile, Sitemap</p>
                             <p><strong>Summary:</strong> Constructed the progressive JavaScript user profile prompts and the interactive SVG ocean sitemap.</p>
@@ -217,11 +219,10 @@
                 </div>
 
             </div>
-        </section>
 
+        </section>
     </main>
 
-    <!-- FOOTER - UPDATE WITH YOUR LINKS -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -232,7 +233,7 @@
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <!-- Update this to your own  -->
-                <p><a href="pageEditor_ST1.html">Page Editor (Student 1)</a></p>
+                <p><a href="pageEditor_ST1.html">Page Editor (Student 03)</a></p>
                 <p><a href="validation_ST1.html">Validation</a></p>
                 <p>Accessibility Statement</p>
             </div>
@@ -247,17 +248,17 @@
             </div>
             <div class="footer-section">
                 <h3>Contact</h3>
-                <!-- Add your westminster mail here -->
-                <p>Email: info@bluefuture.org</p>
+                
+                <p>Email: <a href= "mailto:w2181745@wetminster.ac.uk">w2181745@wetminster.ac.uk</a></p>
+
                 <p>© 2026 BlueFuture Team</p>
             </div>
             <div class="footer-section">
-                <h3>Student 01</h3> <!-- Add your role number here -->
-                <!-- Add your name here -->
-                <p>Name: </p>
-                <!-- Add your St ID here -->
-                <p>Student ID:</p>
-                <p>Role:</p><!-- Add your work here -->
+
+                <h3>Student 03</h3> 
+                <p>Name: Janith Rodrigo </p>
+                <p>Student ID: 20250394 / w2181745</p>
+                <p>Role: Team Page </p>
 
             </div>
         </div>

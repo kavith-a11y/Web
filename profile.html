@@ -2,42 +2,84 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport">
     <title>BlueFuture - User Profile</title>
 
-    <!-- GLOBAL CSS - DO NOT CHANGE -->
     <link rel="stylesheet" href="style.css">
     <style>
-        .main {
-            padding: 20px;
+
+        body {
+            color: white;
         }
 
-        /* Start Button */
+        .bgimage {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: url('profilebg.jpg') center/cover;
+            filter: blur(6px);
+            z-index: -1;
+            transform: scale(1.05);
+        }
+
+        .main {
+            padding: 40px;
+            text-align: center;
+        }
+
         .button {
-            padding: 10px 20px;
-            font-size: 16px;
+            padding: 15px 25px;
             background: #2c7a7b;
             color: white;
-            border: none;
+            border: white;
             cursor: pointer;
+            font-size: 20px;
         }
 
-        .button:hover {
-            background: #1f5b5d;
-        }
-
-        /* ONLY RESET BUTTON RED */
         .reset-btn {
             background: #e74c3c;
         }
 
-        .reset-btn:hover {
-            background: #c0392b;
+        #profileOutput, #progress {
+            background: rgba(0,0,0,0.5);
+            border-radius: 12px;
+            padding: 25px;
+            max-width: 450px;
+            margin: 20px auto;
         }
 
-        .nav-menu a {
-            margin: 10px;
-            text-decoration: none;
+        table {
+            width: 100%;
+        }
+
+        td {
+            padding: 8px 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .label {
+            color: #7ececa;
+            font-weight: bold;
+            text-align: left;
+            width: 40%;
+        }
+
+        .value {
+            text-align: right;
+        }
+
+        .bar {
+            background: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            height: 10px;
+            margin: 10px 0 15px;
+        }
+
+        .bar-fill {
+            height: 100%;
+            background: #3962b5;
+            border-radius: 20px;
         }
 
     </style>
@@ -45,7 +87,8 @@
 
 <body>
 
-<!-- HEADER - DO NOT CHANGE STRUCTURE -->
+<div class="bgimage"></div>
+
 <header>
     <div class="header-container">
         <div class="logo">
@@ -73,7 +116,6 @@
 <main class="main">
 
     <h2>Create Your Sustainability Profile</h2>
-
     <button class="button" onclick="startProfile()">Start Profile</button>
 
     <div id="profileOutput"></div>
@@ -81,7 +123,6 @@
 
 </main>
 
-<!-- FOOTER -->
 <footer>
     <div class="footer-content">
         <div class="footer-section">
@@ -104,15 +145,14 @@
         </div>
         <div class="footer-section">
             <h3>Contact</h3>
-            <p>Email: info@bluefuture.org</p>
+            <p>Email: <a href="mailto:w2182537@westminster.ac.uk">w2182537@westminster.ac.uk</a></p>
             <p>© 2026 BlueFuture Team</p>
         </div>
         <div class="footer-section">
             <h3>Student 04</h3>
             <p>Name: Hivin Nisalitha</p>
-            <p>Student ID: YOUR_ID</p>
-            <p>Content Page: User Profile</p>
-            <p>Role: Developer</p>
+            <p>Student ID: 20240984 / W2182537</p>
+            <p>Role: User Profile</p>
         </div>
     </div>
     <div class="footer-bottom">
@@ -125,45 +165,46 @@
 
         let completed = 0;
 
-        let name = prompt("Step 1 - Enter your name");
-        if (name) { completed++; }
+        let name     = prompt("Step 1 - Enter your name");
+        if (name)      { completed++; }
 
-        let country = prompt("Step 2 - Enter your country");
-        if (country) { completed++; }
+        let country  = prompt("Step 2 - Enter your country");
+        if (country)   { completed++; }
 
-        let id = prompt("Step 3 - Enter your University ID");
-        if (id) { completed++; }
+        let id       = prompt("Step 3 - Enter your University ID");
+        if (id)        { completed++; }
 
         let interest = prompt("Step 4 - What ocean topic interests you?");
-        if (interest) { completed++; }
+        if (interest)  { completed++; }
 
-        let habit = prompt("Step 5 - Name one eco-friendly habit you follow");
-        if (habit) { completed++; }
+        let habit    = prompt("Step 5 - Name one eco-friendly habit you follow");
+        if (habit)     { completed++; }
 
         let transport = prompt("Step 6 - Preferred eco transport (bike/bus/train)");
         if (transport) { completed++; }
 
-        let goal = prompt("Step 7 - What is your sustainability goal?");
-        if (goal) { completed++; }
+        let goal     = prompt("Step 7 - What is your sustainability goal?");
+        if (goal)      { completed++; }
 
         let percent = ((completed / 7) * 100).toFixed(2);
 
-        // Profile Details
         if (completed > 0) {
             document.getElementById("profileOutput").innerHTML =
                 "<h3>Your Profile</h3>" +
-                "<p><strong>Name:</strong> "      + (name      || "Not provided") + "</p>" +
-                "<p><strong>Country:</strong> "   + (country   || "Not provided") + "</p>" +
-                "<p><strong>ID:</strong> "        + (id        || "Not provided") + "</p>" +
-                "<p><strong>Interest:</strong> "  + (interest  || "Not provided") + "</p>" +
-                "<p><strong>Eco Habit:</strong> " + (habit     || "Not provided") + "</p>" +
-                "<p><strong>Transport:</strong> " + (transport || "Not provided") + "</p>" +
-                "<p><strong>Goal:</strong> "      + (goal      || "Not provided") + "</p>";
+                "<table>" +
+                "<tr><td class='label'>Name</td><td class='value'>"      + (name      || "Not provided") + "</td></tr>" +
+                "<tr><td class='label'>Country</td><td class='value'>"   + (country   || "Not provided") + "</td></tr>" +
+                "<tr><td class='label'>ID</td><td class='value'>"        + (id        || "Not provided") + "</td></tr>" +
+                "<tr><td class='label'>Interest</td><td class='value'>"  + (interest  || "Not provided") + "</td></tr>" +
+                "<tr><td class='label'>Eco Habit</td><td class='value'>" + (habit     || "Not provided") + "</td></tr>" +
+                "<tr><td class='label'>Transport</td><td class='value'>" + (transport || "Not provided") + "</td></tr>" +
+                "<tr><td class='label'>Goal</td><td class='value'>"      + (goal      || "Not provided") + "</td></tr>" +
+                "</table>";
 
-            // Profile Completion + Reset Button
             document.getElementById("progress").innerHTML =
                 "<h3>Profile Completion: " + percent + "%</h3>" +
-                "<br><button class='button reset-btn' onclick='resetProfile()'>Reset</button>";
+                "<div class='bar'><div class='bar-fill' style='width:" + percent + "%'></div></div>" +
+                "<button class='button reset-btn' onclick='resetProfile()'>Reset</button>";
         }
     }
 

@@ -1,9 +1,6 @@
 /* ===== BLUE FUTURE - GLOBAL STYLES ===== */
 /* Student 1 - Shared CSS for entire team */
 
-/* Import Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
 /* ===== RESET & BASE STYLES ===== */
 * {
     margin: 0;
@@ -12,18 +9,17 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
-    color: #0d1b2a;  /* text color */
-    background-color: #f0f8ff;  /* neutral color */
+    color: #0d1b2a;
+    background-color: #f0f8ff;
 }
 
 /* ===== HEADER & NAVIGATION ===== */
 header {
-    background-color: #093a4a;  /* footer/dark color */
+    background-color: #093a4a;
     color: white;
     padding: 1rem 5%;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .header-container {
@@ -33,7 +29,7 @@ header {
     flex-wrap: wrap;
 }
 
-/* ===== LOGO STYLES - ADDED ===== */
+/* ===== LOGO STYLES ===== */
 .logo {
     display: flex;
     align-items: center;
@@ -57,7 +53,6 @@ header {
     color: #f0f8ff;
     margin: 0;
 }
-/* ===== END LOGO STYLES ===== */
 
 /* Navigation Bar */
 .nav-menu {
@@ -78,7 +73,7 @@ header {
 
 /* Hover Effect */
 .nav-menu a:hover {
-    color: #5dade2;  /* accent color */
+    color: #5dade2;
     border-bottom-color: #5dade2;
 }
 
@@ -96,7 +91,7 @@ main {
 
 /* ===== FOOTER ===== */
 footer {
-    background-color: #093a4a;  /* footer/dark */
+    background-color: #093a4a;
     color: white;
     padding: 2rem 5% 1rem;
     margin-top: 2rem;
@@ -110,7 +105,7 @@ footer {
 }
 
 .footer-section h3 {
-    color: #5dade2;  /* accent */
+    color: #5dade2;
     margin-bottom: 1rem;
     font-size: 1.2rem;
 }
@@ -138,7 +133,7 @@ footer {
     font-size: 0.9rem;
 }
 
-/* ===== CARD STYLES (for Home Page, etc.) ===== */
+/* ===== CARD STYLES ===== */
 .card-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -150,13 +145,11 @@ footer {
     background: white;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
 .card img {
@@ -170,7 +163,7 @@ footer {
 }
 
 .card-content h3 {
-    color: #3B7B9A;  /* primary */
+    color: #3B7B9A;
     margin-bottom: 0.5rem;
 }
 
@@ -182,7 +175,7 @@ footer {
 /* ===== BUTTON STYLES ===== */
 .btn {
     display: inline-block;
-    background-color: #3B7B9A;  /* primary */
+    background-color: #3B7B9A;
     color: white;
     padding: 0.6rem 1.2rem;
     border-radius: 5px;
@@ -194,11 +187,11 @@ footer {
 }
 
 .btn:hover {
-    background-color: #1e8bc3;  /* secondary */
+    background-color: #1e8bc3;
 }
 
 .btn-accent {
-    background-color: #5dade2;  /* accent */
+    background-color: #5dade2;
 }
 
 .btn-accent:hover {
@@ -221,35 +214,4 @@ footer {
 
 .text-center {
     text-align: center;
-}
-
-/* ===== RESPONSIVE DESIGN ===== */
-@media (max-width: 768px) {
-    .header-container {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .nav-menu {
-        justify-content: center;
-        margin-top: 1rem;
-    }
-    
-    .card-container {
-        grid-template-columns: 1fr;
-    }
-    
-    /* ===== RESPONSIVE LOGO STYLES ===== */
-    .logo {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .logo img {
-        height: 40px;
-    }
-    
-    .logo h1 {
-        font-size: 1.2rem;
-    }
 }
