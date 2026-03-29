@@ -176,7 +176,7 @@
     <header>
     <div class="header-container">
         <div class="logo">
-            <img src="Blue Future Logo.png" alt="BlueFuture Logo - Protecting Life Below Water">
+            <img src="images/logo.png" alt="BlueFuture Logo - Protecting Life Below Water">
             <div>
                 <h1>BlueFuture</h1>
                 <p>Protecting Life Below Water</p>
@@ -186,7 +186,6 @@
             <ul class="nav-menu">
                 <li><a href="home.html">Home</a></li>
                 <li><a href="gallery.html"class="active">Gallery</a></li>
-                <li><a href="splash.html">Splash</a></li>
                 <li><a href="ais.html">Impact Simulator</a></li>
                 <li><a href="feedback.html">Feedback</a></li>
                 <li><a href="team.html">Team</a></li>
@@ -205,35 +204,35 @@
         <div class="gallery-grid" id="galleryGrid">
             <!-- Item 1: Coral Reef -->
             <div class="thumb" data-index="0">
-                <img src="https://media.istockphoto.com/id/153215316/photo/a-sea-turtle-in-a-coral-reef-at-the-bottom-of-the-sea.jpg?s=2048x2048&w=is&k=20&c=MfiLXx5jY0A_rkawCtoHOaVb-J8DgIQsSBz9Ijgo4gw=" alt="colorful Corals with a Turtle">
+                <img src="images/gallery/Colorful Corals with a Turtle.jpg" alt="colorful Corals with a Turtle">
                 <h4>Coral Reefs</h4>
                 <p>Rainforests of the sea</p>
             </div>
 
             <!-- Item 2: Sea Turtles -->
             <div class="thumb" data-index="1">
-                <img src="https://media.istockphoto.com/id/2209140878/photo/close-up-of-a-large-sea-turtle-lying-on-seabed-in-field-of-seaweed.jpg?s=2048x2048&w=is&k=20&c=8NV_Lg3_rYl46a25HUqEw9bYIYqFF6h8ioJ0wGjth18=" alt="Green Sea Turtle">
+                <img src="images/gallery/Green Sea Turtle.jpg" alt="Green Sea Turtle">
                 <h4>Sea Turtles</h4>
                 <p>Ancient ocean travelers</p>
             </div>
 
             <!-- Item 3: Mangroves -->
             <div class="thumb" data-index="2">
-                <img src="https://media.istockphoto.com/id/2202523472/photo/mangrove-forest.jpg?s=2048x2048&w=is&k=20&c=f66VfKdhQTZj8JO5WuuqzuvXXHKm29FYMrmIYzHS5d4=" alt="Mangrove forest">
+                <img src="images/gallery/Mangroves Forest.jpg" alt="Mangrove forest">
                 <h4>Mangroves</h4>
                 <p>Coastal protectors</p>
             </div>
 
             <!-- Item 4: Plastic Pollution -->
             <div class="thumb" data-index="3">
-                <img src="https://media.istockphoto.com/id/1141999585/photo/underwater-global-problem-with-plastic-rubbish.jpg?s=2048x2048&w=is&k=20&c=Zhj3pYzml3DBWx3SeSrPad_YcrMzcUbyEGc-8PGmTFc=" alt="Ocean plastic pollution">
+                <img src="images/gallery/Ocean plastic pollution.jpg"Ocean plastic pollution">
                 <h4>Plastic Crisis</h4>
                 <p>Threat to marine life</p>
             </div>
 
             <!-- Extra 5th item (optional) -->
             <div class="thumb" data-index="4">
-                <img src="https://media.istockphoto.com/id/891200678/photo/humpback-whale-breaching-at-sunset.jpg?s=2048x2048&w=is&k=20&c=BTDQ_Cgrc4dTc5JPCpZvEId7x_D-XewdrhxFMXKnt50=" alt="Whale">
+                <img src="images/gallery/Whale.jpg" alt="Whale">
                 <h4>Whales</h4>
                 <p>Ocean giants</p>
             </div>
@@ -242,10 +241,10 @@
         <!-- MODAL / Extended View (hidden initially) -->
         <div id="modal" class="modal">
             <div class="modal-content" id="modalContent">
-                <span class="close-btn" id="closeModal">&times;</span>
+                <span class="close-btn" id="closeModal"></span>
                 
                 <h2 id="modalTitle">Title</h2>
-                <img id="modalImage" class="modal-image" src="" alt="Expanded view">
+                <img id="modalImage" class="modal-image" src="images/gallery/placeholder.jpg.jpeg" alt="Expanded view">
                 <p id="modalDescription">Description</p>
                 
                 <!-- Control Panel for customization -->
@@ -276,17 +275,8 @@
                 <h3>Quick Links</h3>
                 <p><a href="pageEditor_ST1.html">Page Editor (Student 1)</a></p>
                 <p><a href="validation_ST1.html">Validation Page</a></p>
-                <p>Accessibility Statement</p>
             </div>
-            <div class="footer-section">
-                <h3>Accessibility Statement</h3>
-                <p>Use of semantic HTML structure</p><!--header, nav, main, footer-->
-                <p>All images include alternative text</p><!--alt usage-->
-                <p>Readable fonts and clear colour contrast</p>
-                <p>Simple and consistent navigation</p>
-                <p>Keyboard-friendly navigation</p>
-
-            </div>
+            
             <div class="footer-section">
                 <h3>Contact</h3>
                 <p>Email: <a href="mailto:w2181927@westminster.ac.uk">w2181927@westminster.ac.uk</a> </p>
@@ -313,31 +303,31 @@
         const galleryData = [
             {
                 title: "Coral Reefs",
-                image: "Colorful Corals with a Turtle.jpg",
+                image: "images/gallery/Colorful Corals with a Turtle.jpg",
                 description: "Coral reefs are often called 'rainforests of the sea'. They cover less than 1% of the ocean floor but support 25% of all marine life. Unfortunately, 50% of coral reefs have been lost due to climate change and pollution.",
                 alt: "Vibrant coral reef with fish"
             },
             {
                 title: "Sea Turtles",
-                image: "Green Sea Turtle.jpg",
+                image: "images/gallery/Green Sea Turtle.jpg",
                 description: "Sea turtles have existed for over 100 million years. All seven species are threatened or endangered. They help maintain healthy seagrass beds and coral reefs. Plastic pollution is a major threat as turtles mistake plastic bags for jellyfish.",
                 alt: "Green sea turtle swimming"
             },
             {
                 title: "Mangroves",
-                image: "Mangroves Forest.jpg",
+                image: "images/gallery/Mangroves Forest.jpg",
                 description: "Mangrove forests protect coastlines from erosion and storms. They store up to 10x more carbon than terrestrial forests. 35% of mangroves have been lost in the last 20 years due to coastal development.",
                 alt: "Mangrove forest"
             },
             {
                 title: "Plastic Pollution",
-                image: "Ocean plastic pollution.jpg",
+                image: "images/gallery/Ocean plastic pollution.jpg",
                 description: "8 million tons of plastic enter oceans annually. By 2050, there could be more plastic than fish in the ocean. Microplastics have been found in 100% of sea turtle species and in seafood consumed by humans.",
                 alt: "Ocean plastic pollution"
             },
             {
                 title: "Whales",
-                image: "Whale.jpg",
+                image: "images/gallery/Whale.jpg",
                 description: "Whales play a crucial role in ocean ecosystems. Their waste fertilizes phytoplankton which produces 50% of Earth's oxygen. A single whale captures as much carbon as thousands of trees.",
                 alt: "Humpback whale breaching"
             }

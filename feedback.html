@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BlueFuture - Life Below Water</title>
     
-    <link rel="stylesheet" href="style.css"> <!-- GLOBAL CSS - DO NOT CHANGE -->
+    <link rel="stylesheet" href="Style.css"> <!-- GLOBAL CSS - DO NOT CHANGE -->
          
     <style>
        
@@ -276,7 +276,7 @@
     <header>
     <div class="header-container">
         <div class="logo">
-            <img src="logo.png" alt="BlueFuture Logo - Protecting Life Below Water">
+            <img src="images/logo.png" alt="BlueFuture Logo - Protecting Life Below Water">
             <div>
                 <h1>BlueFuture</h1>
                 <p>Protecting Life Below Water</p>
@@ -286,7 +286,6 @@
             <ul class="nav-menu">
                 <li><a href="home.html">Home</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="splash.html">Splash</a></li>
                 <li><a href="ais.html">Impact Simulator</a></li>
                 <li><a href="feedback.html" class="active">Feedback</a></li>
                 <li><a href="team.html">Team</a></li>
@@ -329,7 +328,7 @@
             <div class="scroll-container" id="programs-scroll">
                 
                 <div class="program-card">
-                    <img src="CoastalBeachCleanup.jpg" alt="Volunteers cleaning beach" class="program-img">
+                    <img src="images/feedback/CoastalBeachCleanup.jpg" alt="Volunteers cleaning beach" class="program-img">
                     
                     <div class="program-info">
                         <h3>Coastal Beach Cleanup</h3>
@@ -342,7 +341,7 @@
                 </div>
 
                 <div class="program-card">
-                    <img src="CoralReefMonitoring.jpg" alt=" Save Coral Reef" class="program-img">
+                    <img src="images/feedback/CoralReefMonitoring.jpg" alt=" Save Coral Reef" class="program-img">
 
                     <div class="program-info">
                         <h3>Coral Reef Monitoring</h3>
@@ -355,7 +354,7 @@
                 </div>
 
                 <div class="program-card">
-                    <img src="SeaTurtleRescue.jpg" alt="Sea Turtle" class="program-img">
+                    <img src="images/feedback/SeaTurtleRescue.jpg" alt="Sea Turtle" class="program-img">
 
                     <div class="program-info">
                         <h3>Sea Turtle Rescue</h3>
@@ -368,7 +367,7 @@
                 </div>
 
                 <div class="program-card">
-                    <img src="ZeroPlasticCampaign.jpg" alt="No Plastic Sign" class="program-img">
+                    <img src="images/feedback/ZeroPlasticCampaign.jpg" alt="No Plastic Sign" class="program-img">
                     
                     <div class="program-info">
                         <h3>Zero Plastic Campaign</h3>
@@ -558,10 +557,20 @@
                     isValid = false;
                 }
 
+                /* Define a regex for exactly 10 digits (no letters or spaces)*/
+                const phoneRegex = /^\d{10}$/;
+
                 if (phoneValue === '') {
                     document.getElementById('phoneError').textContent = 'Phone number is required.';
                     isValid = false;
+                } else if (phoneValue.length > 10) {
+                    document.getElementById('phoneError').textContent = 'Phone number cannot exceed 10 digits.';
+                    isValid = false;
+                } else if (!phoneRegex.test(phoneValue)) {
+                    document.getElementById('phoneError').textContent = 'Please enter exactly 10 digits.';
+                    isValid = false;
                 }
+// //
 
                 if (addressValue === '') {
                     document.getElementById('addressError').textContent = 'Address is required.';
@@ -609,19 +618,11 @@
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <!-- Update this to your own  -->
-                <p><a href="pageEditor_ST1.html">Page Editor (Student 1)</a></p> <!--Add your student roll number here-->
-                <p><a href="validation_ST1.html">Validation</a></p>
+                <p><a href="pageEditor_ST3.html">Page Editor (Student 3)</a></p> <!--Add your student roll number here-->
+                <p><a href="validation_ST3.html">Validation</a></p>
                 
             </div>
-            <div class="footer-section">
-                <h3>Accessibility Statement</h3>
-                <p>Use of semantic HTML structure</p><!--header, nav, main, footer-->
-                <p>All images include alternative text</p><!--alt usage-->
-                <p>Readable fonts and clear colour contrast</p>
-                <p>Simple and consistent navigation</p>
-                <p>Keyboard-friendly navigation</p>
-
-            </div>
+            
             <div class="footer-section">
                 <h3>Contact</h3>
                 <p>Email: <a href= "mailto:w2181745@wetminster.ac.uk">w2181745@wetminster.ac.uk</a></p>

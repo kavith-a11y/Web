@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css">
   <style>
     body{
-      background-image:url("bg.jpg");
+      background-image:url("images/ais/bg.jpg");
       background-size:cover;
       background-position:center;
       background-attachment:fixed;
@@ -99,7 +99,7 @@
 <header>
   <div class="header-container">
     <div class="logo">
-      <img src="logo.png" alt="BlueFuture Logo - Protecting Life Below Water">
+      <img src="images/logo.png" alt="BlueFuture Logo - Protecting Life Below Water">
       <div>
         <h1>BlueFuture</h1>
         <p>Protecting Life Below Water</p>
@@ -109,7 +109,6 @@
       <ul class="nav-menu">
         <li><a href="home.html">Home</a></li>
         <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="splash.html">Splash</a></li>
         <li><a href="ais.html" class="active">Impact Simulator</a></li>
         <li><a href="feedback.html">Feedback</a></li>
         <li><a href="team.html">Team</a></li>
@@ -126,37 +125,37 @@
     <section class="card" onclick="update(3,this)">
       <h2 class="h2">Cut down on plastic</h2>
       <p>Choose reusable items instead of single-use plastics to protect marine animals, like sea turtles, from entanglement.</p>
-      <img class="img" src="turtle.jpg" alt="Turtle near a polethene bag"><br>
+      <img class="img" src="images/ais/turtle.jpg" alt="Turtle near a polethene bag"><br>
       <p>points - 3</p>
     </section>
     <section class="card" onclick="update(2,this)">
       <h2 class="h2" >Reduce seafood intake</h2>
       <p>Eat seafood less frequently, or choose only sustainably caught options, to help prevent the overfishing of species like tuna.</p>
-      <img class="img" src="seafood.jpg" alt="picture of fish that are used to cook"><br>
+      <img class="img" src="images/ais/seafood.jpg" alt="picture of fish that are used to cook"><br>
       <p>points - 2</p>
     </section>
     <section class="card" onclick="update(2,this)">
       <h2 class="h2">Conserve Electricity</h2>
       <p>Turn off lights and unplug devices to lower your energy consumption, helping to slow climate change and protect coral reefs.</p>
-      <img class="img" src="electricity.jpg" alt="turning the light off"><br>
+      <img class="img" src="images/ais/electricity.jpg" alt="turning the light off"><br>
       <p>points - 2</p>
     </section>
     <section class="card" onclick="update(4,this)">
       <h2 class="h2">Sort Your Waste</h2>
       <p>Separate your recyclables, compost, and trash before disposing of them correctly to keep harmful garbage out of the marine ecosystem.</p>
-      <img class="img" src="wastesort.jpg" alt="sorting different kinds of trash"><br>
+      <img class="img" src="images/ais/wastesort.jpg" alt="sorting different kinds of trash"><br>
       <p>points - 4</p>
     </section>
     <section class="card" onclick="update(4,this)">
       <h2 class="h2">Leave No Trace</h2>
       <p>Enjoy coastal environments by observing nature, and do not leave your trash on the beach</p>
-      <img class="img" src="trace.jpg" alt="image showing trash on the beach">
+      <img class="img" src="images/ais/trace.jpg" alt="image showing trash on the beach">
       <p>points - 4</p>
     </section>
     <section class="card" onclick="update(5,this)">
       <h2 class="h2">Clean the Coasts</h2>
       <p>Participate in a coastal cleaning activity to physically remove trash and spread awareness about protecting marine life.</p>
-      <img class="img" src="cleaning.jpg" alt="image showing a group cleaning the beach">
+      <img class="img" src="images/ais/cleaning.jpg" alt="image showing a group cleaning the beach">
       <p>points - 5</p>
     </section>
   </section>
@@ -182,17 +181,8 @@
       <!-- Update this to your own  -->
       <p><a href="pageEditor_ST2.html">Page Editor (Student 2)</a></p>
       <p><a href="validation_ST2.html">Validation</a></p>
-      <p>Accessibility Statement</p>
     </div>
-    <div class="footer-section">
-      <h3>Accessibility Statement</h3>
-      <p>Use of semantic HTML structure</p><!--header, nav, main, footer-->
-      <p>All images include alternative text</p><!--alt usage-->
-      <p>Readable fonts and clear colour contrast</p>
-      <p>Simple and consistent navigation</p>
-      <p>Keyboard-friendly navigation</p>
-
-    </div>
+    
     <div class="footer-section">
       <h3>Contact</h3>
       <!-- Add your westminster mail here -->
@@ -205,7 +195,7 @@
       <p>Name:Kavith Gethmina </p>
       <!-- Add your St ID here -->
       <p>Student ID:20241228/w2181926</p>
-      <p>Role:Action impact screen</p><!-- Add your work here -->
+      <p>Role:Splash screen and Action impact simulator</p><!-- Add your work here -->
 
     </div>
   </div>
@@ -227,15 +217,15 @@
     }
     if(score>1 && score<=8){
       document.getElementById("level").innerHTML="Low"
-      document.body.style.backgroundImage="url(weakbg.jpg)"
+      document.body.style.backgroundImage="url(images/ais/weakbg.jpg)"
     }
     if(score>8 && score<=15){
       document.getElementById("level").innerHTML="Medium"
-      document.body.style.backgroundImage="url(mediumbg.jpg)"
+      document.body.style.backgroundImage="url(images/ais/mediumbg.jpg)"
     }
     else if(score>15 && score<=20){
       document.getElementById("level").innerHTML="High"
-      document.body.style.backgroundImage="url(highbg.jpg)"
+      document.body.style.backgroundImage="url(images/ais/highbg.jpg)"
     }
     document.getElementById("items").innerHTML = items;
     document.getElementById("score").innerHTML = score;

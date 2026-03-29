@@ -30,10 +30,10 @@
             <section>
                 <h2 id="splash">Splash screen</h2>
                     <h3>Technical Description</h3>
-                        <p>The Splash screen serves as an immersive entry point, utilizing a minimal semantic HTML structure—primarily a central main container—to focus the user's attention. To achieve perfect vertical and horizontal centering of the branding and welcome text, CSS Flexbox (display: flex, justify-content: center, align-items: center) is paired with a full-viewport height unit (100vh). The visual design instantly establishes the aquatic theme using a full-screen background image (background-size: cover, background-position: center). To enhance the introductory user experience (UX) without relying on JavaScript, CSS animations (@keyframes) and transition properties are used to create a smooth fade-in effect (opacity). Finally, a prominently styled anchor link acts as a clear call-to-action, using hover pseudo-classes to provide interactive feedback as it guides the visitor into the main website, while the logo utilizes an alt attribute to maintain strict accessibility standards.</p> 
+                        <p>The Splash screen serves as an immersive entry point, utilizing a minimal semantic HTML structure—primarily a central main container—to focus the user's attention. To achieve perfect vertical and horizontal centering of the branding and welcome text, CSS Flexbox (display: flex, justify-content: center, align-items: center) is paired with a full-viewport height unit (100vh). The visual design instantly establishes the aquatic theme using a full-screen background video (background-size: cover, background-position: center). To enhance the introductory user experience (UX) without relying on JavaScript, CSS animations (@keyframes) and transition properties are used to create a smooth fade-in effect (opacity). Finally, a prominently styled anchor link acts as a clear call-to-action, using hover pseudo-classes to provide interactive feedback as it guides the visitor into the main website, while the logo utilizes an alt attribute to maintain strict accessibility standards.</p> 
                     
                     <h3>Accessibility</h3>
-                        <p>The Splash screen is designed with strict adherence to accessibility standards to ensure an inclusive user experience from the very first interaction. The central logo utilizes a descriptive alt attribute, allowing screen reading software to accurately convey the site's branding to visually impaired users. To maintain strict readability against the full-screen background image, high color contrast is enforced for all welcome text and calls-to-action. The primary entry link is fully keyboard-navigable, enabling users who rely on keyboard controls to easily tab to and activate the button without needing a mouse. Furthermore, the page relies on a clean, semantic document structure using a main landmark, while any CSS transition effects are kept smooth and non-disruptive to accommodate users with motion sensitivities.</p>
+                        <p>The Splash screen is designed with strict adherence to accessibility standards to ensure an inclusive user experience from the very first interaction. The central logo utilizes a descriptive alt attribute, allowing screen reading software to accurately convey the site's branding to visually impaired users. To maintain strict readability against the full-screen background video, high color contrast is enforced for all welcome text and calls-to-action. The primary entry link is fully keyboard-navigable, enabling users who rely on keyboard controls to easily tab to and activate the button without needing a mouse. Furthermore, the page relies on a clean, semantic document structure using a main landmark, while any CSS transition effects are kept smooth and non-disruptive to accommodate users with motion sensitivities.</p>
                     
                     <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
                         <p><a href="validation_ST2.html#splashVal">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
@@ -76,7 +76,7 @@
 
             <section>
                 <h2 id="challenge"> Challenges and Lessons Learned</h2>
-                    <p>While building the web pages, I ran into a few problems, but fixing them taught me a lot. First, when I put my page into the team leader's template, our CSS styles clashed. I fixed this by using specific class names so my styles wouldn't mess up the rest of the site. Second, the code checker found that my lists were built incorrectly, so I fixed the order of my bullet points and adjusted the spacing. Third, for the splash screen, I struggled to make the background and text look right on both large computer screens and small mobile phones. I solved this by using flexible CSS rules to make the layout adapt to different sizes. Finally, in the Action Impact Simulator, the background color would get stuck if a user's score went back to zero. I fixed this by updating the JavaScript to handle a zero score properly. Overall, these challenges taught me to keep my code organized, make designs that work on all devices, and always test how the site acts when users do unexpected things.</p> 
+                    <p>While building the web pages, I ran into a few problems, but fixing them taught me a lot. First, when I put my page into the team leader's template, our CSS styles clashed. I fixed this by using specific class names so my styles wouldn't mess up the rest of the site. Second, the code checker found that my lists were built incorrectly, so I fixed the order of my bullet points and adjusted the spacing. Third, for the splash screen, I struggled to make the background and text look right on both large computer screens and small mobile phones. I solved this by using flexible CSS rules to make the layout adapt to different sizes. Finally, in the Action Impact Simulator, the card could not be deselected. i fixed this by adding classList.toggle method. Overall, these challenges taught me to keep my code organized, make designs that work on all devices, and always test how the site acts when users do unexpected things.</p> 
             </section>
 
             <section style="padding-left: 30px;">
@@ -212,31 +212,12 @@
         <!-- Customize this to the role you undertook. Keep only the list items you were responsible to develop, delete the rest -->
             <ul class="top-level-ul" style="padding-left: 30px;">
                 <!-- Keep only the list items you were responsible to develop, delete the rest and update the links to the corresponding markers -->
-                <li>Student 1</li>
-                <ul style="padding-left: 30px;">
-                        <li><a href="home.html">Home page </a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="content_ST1.html">Content</a></li>
-                    </ul>
                 <li>Student 2</li>
                 <ul style="padding-left: 30px;"> 
                     <li><a href="splash.html">Splash Screen</a></li>
                     <li><a href="ais.html">Action Impact Simulator</a></li>
                     <li><a href="content_ST2.html">Content</a></li>
                 </ul>
-                    
-                <li>Student 3</li>
-                    <ul style="padding-left: 30px;">
-                        <li><a href="feedback.html">Feedback</a> </li>
-                        <li><a href="team.html">Team</a></li>
-                        <li><a href="content_ST3.html">Content</a></li>
-                    </ul>
-                <li>Student 4</li>
-                    <ul style="padding-left: 30px;">
-                        <li><a href="profile.html">User Profile </a></li>
-                        <li><a href="sitemap.html">Sitemap</a></li>
-                        <li><a href="content_ST4.html">Content</a></li>
-                    </ul>
             </ul>
         </aside>
     </div>
@@ -254,17 +235,8 @@
       <!-- Update this to your own  -->
       <p><a href="pageEditor_ST2.html">Page Editor (Student 2)</a></p>
       <p><a href="validation_ST2.html">Validation</a></p>
-      <p>Accessibility Statement</p>
     </div>
-    <div class="footer-section">
-      <h3>Accessibility Statement</h3>
-      <p>Use of semantic HTML structure</p><!--header, nav, main, footer-->
-      <p>All images include alternative text</p><!--alt usage-->
-      <p>Readable fonts and clear colour contrast</p>
-      <p>Simple and consistent navigation</p>
-      <p>Keyboard-friendly navigation</p>
-
-    </div>
+    
     <div class="footer-section">
       <h3>Contact</h3>
       <!-- Add your westminster mail here -->
